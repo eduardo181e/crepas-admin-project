@@ -1,0 +1,41 @@
+<div class="every">
+    <div class="container">
+        <h1>{{'crepas.ensalada.create'| translate}}</h1>
+        <form>
+            <h2>{{'crepas.ensalada.edit.ensalada'| translate}}</h2>
+            <div class="form-group">
+                <input type="text" name="ensalada_ind" placeholder="Ensalada" [(ngModel)]="ensalada.ensalada_ind" class="form-control" autofocus>
+            </div>
+            <h2>{{'descripcion'| translate}}</h2>
+            <div class="form-group">
+                <input type="text" name="descripcion" placeholder="Descripcion" [(ngModel)]="ensalada.descripcion" class="form-control" autofocus>
+            </div>
+            <h2>{{'stock'| translate}}</h2>
+            <div class="form-group">           
+                <select [(ngModel)]="ensalada.inventario" class="form-control" name="inventario">
+                <option  [value]= "0">
+                    false
+                </option>
+                <option  [value]= "1">
+                    true
+                </option>
+            </select>
+        </div>  
+            <button class="btn btn-success btn-block" (click)="saveNewEnsalada()">
+                {{'guardar'| translate}}
+            </button>
+        </form>
+    </div>
+    
+    
+        <div class="container">
+            <h3>{{ensalada.ensalada_ind == '' ? ('crepas.ensalada.create'| translate) : ensalada.ensalada_ind}}</h3>
+            <p>{{ensalada.descripcion == '' ? ('descripcion'| translate) : ensalada.descripcion}}</p>
+            <p>
+                {{ensalada.inventario === '' ? ('inventario.none'| translate) :
+                  ensalada.inventario === '0' ? ('inventario.false'| translate) :
+                  ensalada.inventario === '1' ? ('inventario.true'| translate) :
+                  ('inventario.none'| translate)}}
+              </p>
+        </div>
+</div>

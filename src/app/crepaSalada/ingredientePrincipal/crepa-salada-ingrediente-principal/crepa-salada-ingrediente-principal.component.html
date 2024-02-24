@@ -1,0 +1,66 @@
+<h1>
+    {{'crepas.salada.ingrediente.principales'| translate}}
+</h1>
+<div class="container">
+    <div class="sucursal" (click)="navigateCreate()">
+        <div class="link" >{{'crepas.ingrediente.create'| translate}}</div>
+    </div>
+                
+<table class="table">
+    <thead class="bg-dark text-white">
+        <tr>
+            <th class="border-cell dulce">{{'crepas.ingrediente.com.edit.ingrediente'| translate}}</th>
+            <th class="border-cell dulce">{{'inventario'| translate}}</th>
+            <th class="border-cell dulce">{{'accions'| translate}}</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let ingrediente of ingredientes">
+            <td class="border-cell dulce1">{{ingrediente.ingrediente_pri}}</td>
+            <td class="border-cell dulce1">{{ingrediente.inventario === 0 ? ('inventario.false'| translate) : ('inventario.true'| translate)}}</td>
+            <td class="border-cell dulce1">
+            <div style="position: relative; display: flex;">
+                <button class="delete" (click)="deleteIngrediente(ingrediente.id)">
+                    <i class="far fa-trash-alt"></i>
+                </button>
+                <a (click)="navigateEdit(ingrediente.id)" class="btn edit">
+                    {{'crepas.ingrediente.edit'| translate}}
+                </a>
+            </div>
+            </td>
+        </tr>
+    </tbody>
+</table>    
+</div>
+
+
+<div class="containerRes">
+
+    <div class="sucursal">
+        <div class="link" (click)="navigateCreate()">{{'crepas.ingrediente.com.create'| translate}}</div>
+    </div>
+    <!-- Tabla de productos de crepa dulce -->
+    <div class="ContRes" *ngFor="let ingrediente of ingredientes">
+    <div class="dulceRes">
+        <div class="Col">
+                <div class="dulce">{{'crepas.ingrediente.com.edit.ingrediente'| translate}}</div>
+                <div class="padd">{{ ingrediente.ingrediente_pri }}</div>
+        </div>
+        <div class="Col">
+            <div class="dulce">{{'inventario'| translate}}</div>
+            <div class="padd">
+                {{ingrediente.inventario === 0 ? ('inventario.false'| translate) : ('inventario.true'| translate)}}
+            </div>
+    </div>
+
+
+</div>
+<div class="accions">
+    <div class="editRes" style="overflow: hidden;" (click)="navigateEdit(ingrediente.id)">
+        {{'crepas.ingrediente.edit'| translate}}
+    </div>
+    <div class="deleteRes" style="overflow: hidden;" (click)="deleteIngrediente(ingrediente.id)">
+        <i class="far fa-trash-alt"></i> {{'delete'| translate}}
+    </div>        
+    </div>
+    </div>

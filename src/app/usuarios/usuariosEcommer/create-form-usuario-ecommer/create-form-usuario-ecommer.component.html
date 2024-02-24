@@ -1,0 +1,30 @@
+<div class="raw">
+    <div class="col-md-4 offset-md-2">
+        <div class="card">
+            <div class="card-body">
+                <form>
+                    <div class="form-group">
+                        <input type="text" name="username" placeholder="Username" [(ngModel)]="usuario.username" class="form-control" autofocus>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="fullname" placeholder="Fullname" [(ngModel)]="usuario.fullname" class="form-control" autofocus>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="password" placeholder="password" [(ngModel)]="usuario.password" class="form-control" autofocus>
+                    </div>
+                    <button class="btn btn-success btn-block" (click)="createNewUser()">
+                        Save
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-4 offset-md-2">
+    <div class="card card-body text-center">
+        <h3>{{usuario.username == '' ? 'username' : usuario.username}}</h3>
+        <p>{{usuario.fullname == '' ? 'Fullname' : usuario.fullname}}</p>
+        <p>{{usuario.password == '' ? 'Password' : usuario.password}}</p>
+    </div>
+</div>

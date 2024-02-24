@@ -1,0 +1,16 @@
+@import url("../styles.css");
+
+
+h1{width: 76%;
+  text-align: center;
+  margin-left: 12.7%;
+  background: brown;
+  height: auto;
+  line-height: 1;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  color: wheat;
+  font-family: "FontsCarta";
+  padding-top: 10px;
+  padding-bottom: 10px;}

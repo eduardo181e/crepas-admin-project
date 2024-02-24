@@ -1,0 +1,99 @@
+<h1>{{'facturas' | translate}}</h1>
+<div class="dulce12 container" [ngStyle]="!facturas1() ? {'padding-bottom': '1px'} : {'padding-bottom': '0px'}">
+    <div></div>
+    <div class="fecha"><p class="fecha2">{{'inicio'| translate}}<input class="fecha3" [(ngModel)]="fecha.fecha1" type="date"></p><p class="fecha1">{{'fin'| translate}}<input class="fecha3" [(ngModel)]="fecha.fecha2" type="date"></p><div class="generate"><button (click)="genarar()">{{'generate'| translate}}</button></div></div>
+    <!-- Tabla de productos -->
+    <div *ngIf="!facturas1()" class="void">
+        {{'warning.facturas' | translate}}
+    </div>
+<table *ngIf="facturas1()">
+    <thead class="bg-dark text-white">
+        <tr>
+            <th class="border-cell dulce ">{{'Factura.id' | translate}}</th>
+            <th class="border-cell dulce">{{'numero.caja' | translate}}</th>
+            <th class="border-cell dulce">{{'numero.productos' | translate}}</th>
+            <th class="border-cell dulce">{{'Sucursal.id' | translate}}</th>
+            <th class="border-cell dulce">{{'user.id' | translate}}</th>
+            <th class="border-cell dulce">{{'total' | translate}}</th>
+            <th class="border-cell dulce">{{'fecha.hora' | translate}}</th>
+            <th class="border-cell dulce ">{{'accions' | translate}}</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let factura of facturas">
+            <td class="border-cell dulce1">{{ factura.id }}</td>
+            <td class="border-cell dulce1">{{ factura.numero_caja }}</td>
+            <td class="border-cell dulce1">{{ factura.numero_productos }}</td>
+            <td class="border-cell dulce1">{{ factura.sucursal_id }}</td>
+            <td class="border-cell dulce1" (click)="viewUsuario(factura.userId)">{{ factura.userId }}</td>
+            <td class="border-cell dulce1">{{ factura.total }}</td>
+            <td class="border-cell dulce1">{{ factura.fecha_hora }}</td>
+            <td class="border-cell dulce1">
+            <div style="position: relative; display: flex;">
+                <a (click)="viewFactura(factura.id)" class="edit">
+                    Ver factura
+                </a>
+            </div>
+            </td>
+        </tr>
+    </tbody>
+</table>    
+</div>
+
+
+<div class="containerRes"style="background-color: oldlace; padding-bottom: 10px;">
+    <div></div>
+    <div class="fecha"><p class="fecha2">{{'inicio'| translate}}<input class="fecha3" [(ngModel)]="fecha.fecha1" type="date"></p><p class="fecha1">{{'fin'| translate}}<input class="fecha3" [(ngModel)]="fecha.fecha2" type="date"></p><div class="generate"><button (click)="genarar()">{{'generate'| translate}}</button></div></div>
+    <div *ngIf="!facturas1()" class="void">
+        {{'warning.facturas' | translate}}
+    </div>
+    <div class="ContRes" *ngFor="let factura of facturas">
+    <div class="dulceRes">
+        <div class="Col">
+                <div class="dulce">{{'Factura.id' | translate}}</div>
+                <div class="padd">{{ factura.id }}</div>
+        </div>
+        <div class="Col">
+            <div class="dulce">{{'numero.caja' | translate}}</div>
+            <div class="padd">
+                {{factura.numero_caja}}
+            </div>
+    </div>
+    <div class="Col">
+        <div class="dulce">{{'numero.productos' | translate}}</div>
+        <div class="padd">
+            {{factura.numero_productos}}
+        </div>
+</div>
+<div class="Col">
+    <div class="dulce">{{'Sucursal.id' | translate}}</div>
+    <div class="padd">
+        {{factura.sucursal_id}}
+    </div>
+</div>
+<div class="Col" (click)="viewUsuario(factura.userId)">
+    <div class="dulce">{{'user.id' | translate}}</div>
+    <div class="padd">
+        {{factura.userId}}
+    </div>
+</div>
+<div class="Col">
+    <div class="dulce">{{'total' | translate}}</div>
+    <div class="padd">
+        {{factura.total}}
+    </div>
+</div>
+<div class="Col">
+    <div class="dulce">{{'fecha.hora' | translate}}</div>
+    <div class="padd">
+        {{factura.fecha_hora}}
+    </div>
+</div>
+    </div>
+    <div class="accions">
+    <div class="editRes" style="overflow: hidden;" (click)="viewFactura(factura.id)">
+        Ver factura
+    </div>
+    </div>
+</div>
+</div>

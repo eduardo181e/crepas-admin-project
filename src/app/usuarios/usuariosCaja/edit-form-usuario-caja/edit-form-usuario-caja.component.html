@@ -1,0 +1,46 @@
+<div class="every">
+    <div class="container">
+        <h1>{{'edit.user' | translate}}</h1>
+        <form>
+                    
+            <h2>{{'usuario'| translate}}</h2>                 
+            <div class="form-group">
+                <input type="text" name="username" placeholder="Username" [(ngModel)]="usuario.username" class="form-control" autofocus>
+            </div>
+            <h2>{{'fullname'| translate}}</h2>                    
+                <div class="form-group">
+                    <input type="text" name="fullname" placeholder="Fullname" [(ngModel)]="usuario.fullname" class="form-control" autofocus>
+                </div>
+            <h2>{{'password'| translate}}</h2>                    
+                <div class="form-group">
+                    <input type="text" name="password" placeholder="password" [(ngModel)]="usuario.password" class="form-control" autofocus>
+                </div>
+            <h2>
+                {{'numero.caja'| translate}}
+            </h2>
+            <div class="form-group">
+                <input type="number" name="numero_caja" placeholder="Numero de Caja" [(ngModel)]="usuario.numero_caja" class="form-control" autofocus>
+            </div>              
+            <h2>{{'sucursal'| translate}}</h2>
+                <div class="form-group">
+                <select (click)="sucursal()" [(ngModel)]="usuario.sucursal_id" class="form-control" name="sucursal">
+                  <option *ngFor="let sucursal of sucursales" [value]="sucursal.id">
+                    {{ sucursal.nombre }}
+                  </option>
+                </select>
+              </div>
+        <button class="btn btn-success btn-block" (click)="updateUsuario()">           
+            {{'guardar'| translate}}
+        </button>
+    </form>           
+    </div>
+    
+    
+        <div class="container">
+            <h3 class="card-body">{{usuario.username == '' ? ('usuario'| translate) : usuario.username}}</h3>
+                <p class="card-body">{{usuario.fullname == '' ? ('fullname'| translate) : usuario.fullname}}</p>
+                <p class="card-body">{{usuario.password == '' ? ('password'| translate) : usuario.password}}</p>
+                <p class="card-body">{{usuario.numero_caja == 0 ? ('numero.caja'| translate) : usuario.numero_caja}}</p>
+                <p class="card-body">{{sucursal1.nombre == '' ? ('sucursal'| translate) : sucursal1.nombre}}</p>
+        </div>
+</div>

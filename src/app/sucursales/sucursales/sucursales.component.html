@@ -1,0 +1,106 @@
+
+<h1>
+    {{'menu.sucursales' | translate}}
+</h1>
+<div class="container12">
+    <div class="sucursal">
+        <div class="link" (click)="navigateCreate()">{{'create.sucursal' | translate}}</div> 
+     </div>
+     <div *ngIf="!facturas1()" class="void">
+         {{'warning.sucursales'| translate}}
+     </div>
+                 
+</div>
+<div class="container">
+<table class="table"  *ngIf="facturas1()">
+    <thead class="bg-dark text-white">
+        <tr>
+            <th class="border-cell dulce r1">{{'name' | translate}}</th>
+            <th class="border-cell dulce">{{'numero.casa' | translate}}</th>
+            <th class="border-cell dulce">{{'nombre.calle' | translate}}</th>
+            <th class="border-cell dulce">{{'ciudad' | translate}}</th>
+            <th class="border-cell dulce">{{'estado' | translate}}</th>
+            <th class="border-cell dulce">{{'pais' | translate}}</th>
+            <th class="border-cell dulce">{{'numero.telefono' | translate}}</th>
+            <th class="border-cell dulce r2">{{'accions' | translate}}</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let sucursal of sucursales">
+            <td class="border-cell dulce1 r4">{{sucursal.nombre}}</td>
+            <td class="border-cell dulce1">{{sucursal.direccion.numero}}</td>
+            <td class="border-cell dulce1">{{sucursal.direccion.calle}}</td>
+            <td class="border-cell dulce1">{{sucursal.direccion.ciudad}}</td>
+            <td class="border-cell dulce1">{{sucursal.direccion.estado}}</td>
+            <td class="border-cell dulce1">{{sucursal.direccion.pais}}</td>
+            <td class="border-cell dulce1">{{sucursal.direccion.telefono}}</td>
+            <td class="border-cell dulce1 r3">
+            <div style="position: relative; display: flex;">
+                <button class="delete" (click)="deleteSucursal(sucursal.id)">
+                    <i class="far fa-trash-alt"></i>
+                </button>
+                <a [routerLink]="['/editSucursal', sucursal.id]" class="edit">
+                    {{'edit.sucursal' | translate}}
+                </a>
+                <a (click)="administraSucursal(sucursal.id)" class="admin">
+                    {{'admin.sucursal' | translate}}
+                </a>
+            </div>
+            </td>
+        </tr>
+    </tbody>
+</table>    
+</div>
+
+
+<div class="containerRes" *ngIf="facturas1()">
+
+
+    <!-- Tabla de productos de crepa dulce -->
+    <div class="ContRes" *ngFor="let sucursal of sucursales">
+    <div class="dulceRes">
+        <div class="Col">
+                <div class="dulce">{{'name' | translate}}</div>
+                <div class="padd">{{ sucursal.nombre }}</div>
+        </div>
+        <div class="Col">
+            <div class="dulce">{{'numero.casa' | translate}}</div>
+            <div class="padd">
+                {{sucursal.direccion.numero}}
+            </div>
+    </div>
+    <div class="Col">
+        <div class="dulce">{{'nombre.calle' | translate}}</div>
+        <div class="padd">{{sucursal.direccion.calle}}</div>    
+</div>
+<div class="Col">
+    <div class="dulce">{{'ciudad' | translate}}</div>
+    <div class="padd">{{sucursal.direccion.ciudad}}</div>    
+</div>
+<div class="Col">
+    <div class="dulce">{{'estado' | translate}}</div>
+    <div class="padd">{{sucursal.direccion.estado}}</div>    
+</div>
+<div class="Col">
+    <div class="dulce">{{'pais' | translate}}</div>
+    <div class="padd">{{sucursal.direccion.pais}}</div>    
+</div>
+<div class="Col">
+    <div class="dulce">{{'numero.telefono' | translate}}</div>
+    <div class="padd">{{sucursal.direccion.telefono}}</div>    
+</div>
+    </div>
+    <div class="accions">
+    <div class="editRes" style="overflow: hidden;" [routerLink]="['/editSucursal', sucursal.id]">
+        {{'edit.sucursal' | translate}}
+    </div>
+    <div class="editRes" style="background-color: green; overflow: hidden;" (click)="administraSucursal(sucursal.id)">
+        {{'admin.sucursal' | translate}}
+    </div>
+    <div class="deleteRes" style="overflow: hidden;" (click)="deleteSucursal(sucursal.id)">
+        <i class="far fa-trash-alt"></i> {{'delete' | translate}}
+    </div>        
+    </div>
+
+</div>
+</div>

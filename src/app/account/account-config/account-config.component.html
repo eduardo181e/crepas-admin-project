@@ -1,0 +1,36 @@
+
+<div class="container">
+    <h1>{{'account.config'| translate}}</h1>
+   <form>
+    <h2>{{'username'| translate}}</h2>
+        <div class="form-group">
+            <input type="text" name="username" placeholder="{{'username'| translate}}" [(ngModel)]="username" class="form-control" autofocus>
+        </div>
+        <h2>{{'fullname'| translate}}</h2>
+        <div class="form-group">
+            <input type="text" name="fullname" placeholder="{{'fullname'| translate}}" [(ngModel)]="fullname" class="form-control" autofocus>
+        </div>
+        <h2>{{'lang'| translate}}</h2>
+        <div class="form-group">
+            <select (click)="changeLanguage()" [(ngModel)]="lang" class="form-control" name="lang">
+                <option  value= "es">
+                    {{'spanish'| translate}}
+                </option>
+                <option  value= "en">
+                    {{'english'| translate}}
+                </option>
+            </select>
+        </div>
+        <h2>Contraseña</h2>
+        <div class="form-group" (click)="redirectUpdatePass()">
+            <p>{{password}}</p>
+        </div>
+            <button class="btn btn-success btn-block" (click)="redirectUpdatePass()">
+                {{'password.change'| translate}}
+            </button>
+
+        <button class="btn btn-success btn-block" (click)="updateUsuario()" style="position: absolute;">
+            {{'update.user'| translate}}
+        </button>
+    </form>                
+   </div>

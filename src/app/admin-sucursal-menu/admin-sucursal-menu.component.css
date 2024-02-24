@@ -1,0 +1,38 @@
+.container{
+    margin-left: 10%;
+    width: 80%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.link{
+    background-color: bisque;
+    flex-grow: 1;
+    height: auto;
+    line-height: 1;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    text-align: center;
+    flex-basis: 350px;
+    cursor: pointer;
+    font-size: 35px;
+}
+
+@import url('../../styles/tableStyles.css');
+
+h1{width: 76%;
+    text-align: center;
+    margin-left: 12.7%;
+    background: brown;
+    height: auto;
+    line-height: 1;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    color: wheat;
+    font-family: "FontsCarta";
+    padding-top: 10px;
+    padding-bottom: 10px;}

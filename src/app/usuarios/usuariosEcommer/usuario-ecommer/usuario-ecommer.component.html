@@ -1,0 +1,29 @@
+<div class="raw">
+    <div class="col-md-4 offset-md-2">
+        <div class="card">
+            <div class="card-body">
+                    <div>
+                        <div class="link" (click)="navigateCreate()">Nuevo Usuario</div>
+                    </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  
+  <div class="col-md-4" *ngFor="let usuario of usuarios">
+      <div class="card text-center">
+          <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+              {{usuario.username}}
+              <button class="btn btn-danger" (click)="deleteUsuario(usuario.id)" >
+                  <i class="far fa-trash-alt"></i>
+              </button>
+          </div>
+          <div class="card-body">
+              <p>{{usuario.password}}</p>
+              <p>{{usuario.fullname}}</p>
+              <a [routerLink]="['/editUsuarioEcommer', usuario.id]" class="btn btn-info btn-block">
+                  EDIT USUARIO
+              </a>
+          </div>
+      </div>
+  </div>

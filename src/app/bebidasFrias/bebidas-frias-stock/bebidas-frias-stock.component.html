@@ -1,0 +1,97 @@
+<h1>{{'menu.bebidas.frias.stock'| translate}}</h1>
+<div class="dulce12 container" [ngStyle]="!facturas1() ? {'padding-bottom': '1px'} : {'padding-bottom': '0px'}">
+    <div *ngIf="!facturas1()" class="void">
+        {{'warning.stock'| translate}}
+    </div>
+    <table class="table" *ngIf="facturas1()">
+        <thead>
+            <tr>
+                <th class="border-cell dulce">{{'bebida.edit.bebida'| translate}}</th>
+                <th class="border-cell dulce">{{'descripcion'| translate}}</th>
+                <th class="border-cell dulce">{{'product.id'| translate}}</th>
+                <th class="border-cell dulce">{{'Sucursal.id'| translate}}</th>
+                <th class="border-cell dulce">{{'existencia'| translate}}</th>
+                <th class="border-cell dulce">{{'inventario'| translate}}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let bebida of bebidas">
+                <td class="border-cell dulce1">{{ bebida.bebida }}</td>
+                <td class="border-cell dulce1">{{ bebida.descripcion }}</td>
+                <td class="border-cell dulce1">{{ bebida.product_id }}</td>
+                <td class="border-cell dulce1">{{ bebida.sucursal_id }}</td>
+                <td class="border-cell dulce1">               
+                    <div style="position: relative;"><p class="parrafo" *ngIf="bebida.cantidad === 1">{{bebida.existencia === 0 ? 'false' : 'true'}}</p></div>      
+                    
+                    <select *ngIf="bebida.cantidad === 0" (change)="actualizarExistencia(bebida, bebida.product_id)" [(ngModel)]="bebida.existencia" class="form-control" name="cantidad">
+                    <option  [value]= "0">
+                        false
+                    </option>
+                    <option  [value]= "1">
+                        true
+                    </option>
+                </select>
+            </td>
+            <td class="border-cell dulce1">
+                <p *ngIf="bebida.cantidad === 0">{{'warning.stock.false.req'| translate}}</p>
+                    
+                <input *ngIf="bebida.cantidad === 1" type="number" [(ngModel)]="bebida.inventario" (keyup.enter)="actualizaInventario(bebida, bebida.product_id)" (input)="existencia(bebida)">
+            </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="containerRes" style="background-color: oldlace; padding-bottom: 10px;">
+    <div *ngIf="!facturas1()" class="void">
+        {{'warning.stock'| translate}}
+    </div>
+    <!-- Tabla de productos de crepa dulce -->
+    <div class="ContRes" style="border: 5px solid;" *ngFor="let bebida of bebidas">
+    <div class="dulceRes">
+        <div class="Col">
+                <div class="dulce">{{'bebida.edit.bebida'| translate}}</div>
+                <div class="padd">{{ bebida.bebida }}</div>
+        </div>
+        <div class="Col">
+            <div class="dulce">{{'descripcion'| translate}}</div>
+            <div class="padd">{{ bebida.descripcion }}</div>
+    </div>
+        <div class="Col">
+            <div class="dulce">{{'product.id'| translate}}</div>
+            <div class="padd">
+                {{bebida.product_id}}
+            </div>
+    </div>
+    <div class="Col">
+        <div class="dulce">{{'Sucursal.id'| translate}}</div>
+        <div class="padd">{{bebida.sucursal_id}}</div>    
+</div>
+<div class="Col">
+    <div class="dulce">{{'existencia'| translate}}</div>
+    <div class="padd">
+        <div style="position: relative;"><p class="parrafo" *ngIf="bebida.cantidad === 1">{{bebida.existencia === 0 ? 'false' : 'true'}}</p></div>      
+                    
+        <select *ngIf="bebida.cantidad === 0" (change)="actualizarExistencia(bebida, bebida.product_id)" [(ngModel)]="bebida.existencia" class="form-control" name="cantidad">
+        <option  [value]= "0">
+            false
+        </option>
+        <option  [value]= "1">
+            true
+        </option>
+    </select>
+    </div>    
+</div>
+<div class="Col">
+    <div class="dulce">Inventario</div>
+    <div class="padd">
+        <p *ngIf="bebida.cantidad === 0">{{'warning.stock.false.req'| translate}}</p>
+                    
+        <input *ngIf="bebida.cantidad === 1" type="number" [(ngModel)]="bebida.inventario" (keyup.enter)="actualizaInventario(bebida, bebida.product_id)" (input)="existencia(bebida)">
+    </div>    
+</div>
+    </div>
+
+</div>
+</div>

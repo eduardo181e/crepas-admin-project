@@ -1,0 +1,36 @@
+<div class="every">
+    <div class="container">
+        <h1>{{'crepas.adereso.create'| translate}}</h1>
+        <form>
+            <h2>{{'crepas.adereso.edit.adereso'| translate}}</h2>
+            <div class="form-group">
+                <input type="text" name="adereso" placeholder="adereso" [(ngModel)]="adereso.adereso" class="form-control" autofocus>
+            </div>
+            <h2>{{'inventario'| translate}}</h2>
+            <div class="form-group">           
+                <select [(ngModel)]="adereso.inventario" class="form-control" name="inventario">
+                <option  [value]= "0">
+                    false
+                </option>
+                <option  [value]= "1">
+                    true
+                </option>
+            </select>
+        </div>  
+            <button class="btn btn-success btn-block" (click)="saveNewAdereso()">
+                {{'guardar'| translate}}
+            </button>
+        </form>          
+    </div>
+    
+    
+        <div class="container">
+            <h3>{{adereso.adereso == '' ? ('crepas.adereso.edit.adereso'| translate) : adereso.adereso}}</h3>
+            <p>
+                {{adereso.inventario === '' ? ('inventario.none'| translate) :
+                  adereso.inventario === '0' ? ('inventario.false'| translate) :
+                  adereso.inventario === '1' ? ('inventario.true'| translate) :
+                  ('inventario.none'| translate)}}
+              </p>
+        </div>
+</div>

@@ -1,0 +1,66 @@
+<h1>
+    {{'crepas.adereso.edit.aderesos.base'| translate}}
+</h1>
+<div class="container">
+    <div class="sucursal" (click)="navigateCreate()">
+        <div class="link" >{{'crepas.adereso.create'| translate}}</div>
+    </div>
+                
+<table class="table">
+    <thead class="bg-dark text-white">
+        <tr>
+            <th class="border-cell dulce r1">{{'crepas.adereso.edit.adereso'| translate}}</th>
+            <th class="border-cell dulce">{{'inventario'| translate}}</th>
+            <th class="border-cell dulce r2">{{'accions'| translate}}</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let adereso of aderesos">
+            <td class="border-cell dulce1 r4">{{adereso.adereso_base}}</td>
+            <td class="border-cell dulce1">{{adereso.inventario === 0 ? ('inventario.false'| translate) : ('inventario.true'| translate)}}</td>
+            <td class="border-cell dulce1">
+            <div style="position: relative; display: flex;">
+                <button class="delete" (click)="deleteAdereso(adereso.id)">
+                    <i class="far fa-trash-alt"></i>
+                </button>
+                <a (click)="navigateEdit(adereso.id)" class="btn edit">
+                    {{'crepas.adereso.edit'| translate}}
+                </a>
+            </div>
+            </td>
+        </tr>
+    </tbody>
+</table>    
+</div>
+
+
+<div class="containerRes">
+
+    <div class="sucursal">
+        <div class="link" (click)="navigateCreate()">{{'crepas.adereso.create'| translate}}</div>
+    </div>
+    <!-- Tabla de productos de crepa dulce -->
+    <div class="ContRes" *ngFor="let adereso of aderesos">
+    <div class="dulceRes">
+        <div class="Col">
+                <div class="dulce">{{'crepas.adereso.edit.adereso'| translate}}</div>
+                <div class="padd">{{ adereso.adereso_base }}</div>
+        </div>
+        <div class="Col">
+            <div class="dulce">{{'inventario'| translate}}</div>
+            <div class="padd">
+                {{adereso.inventario === 0 ? ('inventario.false'| translate) : ('inventario.true'| translate)}}
+            </div>
+    </div>
+
+
+</div>
+<div class="accions">
+    <div class="editRes" style="overflow: hidden;" (click)="navigateEdit(adereso.id)">
+        {{'crepas.adereso.edit'| translate}}
+    </div>
+    <div class="deleteRes" style="overflow: hidden;" (click)="deleteAdereso(adereso.id)">
+        <i class="far fa-trash-alt"></i> {{'delete'| translate}}
+    </div>        
+    </div>
+    </div>

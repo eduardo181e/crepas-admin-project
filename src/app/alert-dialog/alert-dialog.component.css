@@ -1,0 +1,43 @@
+/* En el archivo CSS de AlertDialogComponent o en el archivo CSS global */
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: initial;
+  min-height: 50px; /* Esto centra verticalmente en la pantalla */
+}
+
+.alert{
+  color: white;
+  padding: 20px;
+  background-color: #424242;
+  overflow: hidden;
+}
+h1{
+  font-size: 25px;
+}
+
+p{
+  font-size: 18px;
+}
+p, h1{
+  color: white;
+  padding-left: 20px;
+}
+
+.closebtn{
+  margin-left: 15px;
+  color: black;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.2s;
+  height: 25px;
+background: white;
+}
+
+.closebtn:hover{
+  color: black;
+  background-color: yellow;
+}

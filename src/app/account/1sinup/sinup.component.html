@@ -1,0 +1,32 @@
+
+<div class="container">
+    <h1>{{'signUp'| translate}}</h1>
+   <form>
+    <h2>{{'username'| translate}}</h2>
+        <div class="form-group">
+            <input type="text" name="username" placeholder="{{'username'| translate}}" [(ngModel)]="username" class="form-control" autofocus>
+        </div>
+        <h2>{{'fullname'| translate}}</h2>
+        <div class="form-group">
+            <input type="text" name="username" placeholder="{{'fullname'| translate}}" [(ngModel)]="fullname" class="form-control" autofocus>
+        </div>
+        <h2>{{'password'| translate}}</h2>
+        <div class="form-group">
+            <input type="text" name="password" placeholder="{{'password'| translate}}" [(ngModel)]="password" class="form-control" autofocus>
+        </div>
+        <h2>{{'lang'| translate}}</h2>
+        <div class="form-group">
+            <select [(ngModel)]="lang" class="form-control" name="{{'lang'| translate}}" (click)="changeLanguage(lang)">
+                <option  value= "es">
+                    {{'spanish'| translate}}
+                </option>
+                <option  value= "en">
+                    {{'english'| translate}}
+                </option>
+            </select>
+        </div>
+        <button class="btn btn-success btn-block" (click)="Login()">
+            {{'signUp'| translate}}
+        </button>
+    </form>                
+   </div>

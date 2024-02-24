@@ -1,0 +1,117 @@
+@import url('../../../../styles/productsMenuStyles.css');
+@import url('../../../../styles/tableStyles.css');
+
+.fecha1{
+    display: block;
+    float: left;
+    margin-top: -7px;
+    margin-left: 30px;
+}
+
+.fecha2{
+    display: block;
+    float: left;
+    margin-top: -7px;
+}
+
+.fecha3{
+    margin-left: 6px;
+}
+
+.generate {
+    position: absolute;
+    left: 341px;
+    top: 18px;
+    width: 100px;
+  }
+
+ .fecha{
+    position: relative;
+    margin-top: 70px;
+    width: 340px;
+    height: 0px;
+    padding-top: 25px;
+  }
+
+ .dulce12{
+    margin-left: 4%;
+    margin-right: 5%;
+    background-color: oldlace;
+    width: 90%;
+    padding-top: 0px;
+ }
+
+ .void{
+    margin-top: 75px;
+    background: aqua;
+    width: 30%;
+    margin-left: 37%;
+    padding-left: 2%;
+    height: auto;
+    line-height: 1;
+    border-radius: 10px;
+    font-size: 18px;
+    margin-bottom: 25px;
+    padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  font-size: 35px;
+ }
+
+ @media (max-width: 490px){
+    .fecha{
+        width: 200px;
+        height: 1px;
+        margin-bottom: 55px;
+    }
+
+    .fecha1{
+        margin-left: 0px;
+    }
+
+    .generate{
+        left: 170px;
+    }
+
+    .fecha3{
+        margin-bottom: 10px;
+    }
+
+ }
+
+ @media (max-width: 1320px){
+
+    .void{
+        width: 90%;
+        margin-left: 5%;
+    }
+ }
+
+@media ( max-width: 300px){
+ .generate {
+    left: 0px;
+    top: 77px;
+  }
+
+  .fecha{
+    height: 30px;
+  }
+}
+
+h1{width: 76%;
+    text-align: center;
+    margin-left: 12.7%;
+    background: brown;
+    height: auto;
+    line-height: 1;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    color: wheat;
+    font-family: "FontsCarta";
+    padding-top: 10px;
+    padding-bottom: 10px;}
+
+table{
+    margin-top: 30px;
+  border: 5px solid;}

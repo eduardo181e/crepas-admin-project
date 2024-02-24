@@ -1,0 +1,101 @@
+<nav id="navIn" [ngStyle]="{'width': lenguage() ? '992px' : '818px'}">
+  <ul class="menu-horizontal">
+    <div class="iconb" (click)="desaparecer()"  style="margin-left: 10px; margin-top: 5px; margin-bottom: 6px;">
+        <div class="icon">
+         <i style="font-size: 28px;
+         color: white;
+         position: absolute;
+         top: 6px;
+         left: 8px;" class="fa fa-bars"></i>   
+        </div>        
+    </div>
+    <li class="r1" *ngIf="authService.isAuthenticated()">
+      <a  (click)="navigateMenuPrincipal()">{{'menu.main'| translate}}</a>
+    </li>
+    <li *ngIf="authService.isAuthenticated()">
+      <a  (click)="navigateSales()">{{'menu.ventas'| translate}}</a>
+    </li>
+    <li *ngIf="authService.isAuthenticated()">
+      <a  (click)="navigateSucursales()">{{'menu.sucursales'| translate}}</a>
+    </li>
+    <li *ngIf="authService.isAuthenticated()">
+      <a  (click)="navigateUsuarios()">{{'menu.usuarios.caja'| translate}}</a>
+    </li>
+    <li *ngIf="authService.isAuthenticated()">
+      <a  (click)="menu()" >{{'menu.productos'| translate}}</a>
+    </li>
+    <li *ngIf="authService.isAuthenticated()">
+      <a  (click)="facturas()" >{{'facturas'| translate}}</a>
+    </li>
+    <li *ngIf="!authService.isAuthenticated()" class="login" style="margin-right: -70px;"><a (click)="admin()">{{'signIn'| translate}}</a></li>
+    <li *ngIf="authService.isAuthenticated()">
+      <a  (click)="logout()">{{'logOut'| translate}}</a>
+    </li>
+    <li class="r2" *ngIf="authService.isAuthenticated()">
+      <a (click)="navigateAccountConfig()"><i class="fas fa-cog" style="margin-right: 5px;"></i>{{'settings'| translate}}</a>
+    </li>
+    <li *ngIf="!authService.isAuthenticated()" style="margin-right: -35px;
+    border-radius: 0px 10px 10px 0px;
+    width: 130px;
+    text-align: center;">
+      <a  (click)="signup()">{{'signUp'| translate}}</a>
+    </li>
+  </ul>
+</nav>
+
+<div class="capa"></div>
+<div class="iconIn" >
+  <div (click)="aparecer()" class="icon">
+   <i  style="font-size: 28px;
+   color: rgb(88, 105, 114);
+   position: absolute;
+   top: 6px;
+   left: 8px;" class="fa fa-bars"></i>   
+  </div>        
+
+  
+
+<div class="back" (click)="desaparecer()"></div>
+<div class="back1"></div>
+<nav id="navAn">
+<ul class="menu-horizontal">
+  <div class="iconb"  style="margin-left: 10px; margin-top: 5px; margin-bottom: 6px;">
+      <div (click)="desaparecer()" class="icon">
+       <i  style="font-size: 28px;
+       color: white;
+       position: absolute;
+       top: 6px;
+       left: 8px;" class="fa fa-bars"></i>   
+      </div>        
+  </div>
+  <li *ngIf="authService.isAuthenticated()">
+    <a  (click)="navigateMenuPrincipal()">{{'menu.main'| translate}}</a>
+  </li>
+  <li *ngIf="authService.isAuthenticated()">
+    <a  (click)="navigateSales()">{{'menu.ventas'| translate}}</a>
+  </li>
+  <li *ngIf="authService.isAuthenticated()">
+    <a  (click)="navigateSucursales()">{{'menu.sucursales'| translate}}</a>
+  </li>
+  <li *ngIf="authService.isAuthenticated()">
+    <a  (click)="navigateUsuarios()">{{'menu.usuarios.caja'| translate}}</a>
+  </li>
+  <li *ngIf="authService.isAuthenticated()">
+    <a  (click)="menu()" >{{'menu.productos'| translate}}</a>
+  </li>
+  <li *ngIf="authService.isAuthenticated()">
+    <a  (click)="facturas()" >{{'facturas'| translate}}</a>
+  </li>
+  <li *ngIf="!authService.isAuthenticated()" class="login" style="text-align: inherit; width: 100%;"><a (click)="admin()">{{'signIn'| translate}}</a></li>
+  <li *ngIf="authService.isAuthenticated()">
+    <a  (click)="logout()">{{'logOut'| translate}}</a>
+  </li>
+  <li *ngIf="!authService.isAuthenticated()" style="text-align: inherit; ">
+    <a  (click)="signup()">{{'signUp'| translate}}</a>
+  </li>
+  <li *ngIf="authService.isAuthenticated()">
+    <a (click)="navigateAccountConfig()"><i class="fas fa-cog" style="margin-right: 5px;"></i>{{'settings'| translate}}</a>
+  </li>
+</ul>
+</nav>
+</div>

@@ -1,0 +1,33 @@
+<div class="every">
+    <div class="container">
+        <h1>{{'crepas.dulces.nieve.edit'| translate}}</h1>
+        <form>
+            <h2>{{'crepas.dulces.nieve.edit.harina'| translate}}</h2>
+            <div class="form-group">
+                <input type="text" name="nieve" placeholder="{{'crepas.dulces.nieve.edit.harina'| translate}}" [(ngModel)]="nieve.nieve_com" class="form-control" autofocus>
+            </div>             
+            <h2>{{'inventario'| translate}}</h2>
+            <div class="form-group">           
+                <select [(ngModel)]="nieve.inventario" class="form-control" name="inventario">
+                <option  [value]= "0">
+                    false
+                </option>
+                <option  [value]= "1">
+                    true
+                </option>
+            </select>
+        </div> 
+            <button class="btn btn-success btn-block" (click)="updatenieve()">
+                {{'guardar'| translate}}
+            </button>
+        </form>     
+    </div>
+    
+    
+        <div class="container">
+            <h3>{{nieve.nieve == '' ? ('crepas.dulce.nieves'| translate) : nieve.nieve}}</h3>
+            <p>
+                {{nieve.inventario === '1' ? ('inventario.true'| translate) : ('inventario.false'| translate)}}
+              </p>
+        </div>
+</div>

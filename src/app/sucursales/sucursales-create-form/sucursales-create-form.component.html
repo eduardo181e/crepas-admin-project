@@ -1,0 +1,65 @@
+<div class="every">
+    <div class="container">
+        <h1>{{'create.sucursal' | translate}}</h1>
+        <form>
+                    
+            <h2>{{'name' | translate}}</h2>
+                <div class="form-group">
+                    <input type="text" name="nombre" placeholder="Nombre" [(ngModel)]="sucursal.nombre" class="form-control" autofocus>
+                </div>
+           <h2>{{'numero.casa' | translate}}</h2>
+            <div class="form-group">
+                <input type="number" name="numero" placeholder="Numero de Calle" [(ngModel)]="direccion.numero" class="form-control" autofocus>
+            </div>
+            <h2>{{'nombre.calle' | translate}}</h2>
+                            <div class="form-group">
+            <input type="text" name="calle" placeholder="Calle" [(ngModel)]="direccion.calle" class="form-control" autofocus>
+             </div>
+            <h2>{{'ciudad' | translate}}</h2>
+                <div class="form-group">
+                <input type="text" name="ciudad" placeholder="Ciudad o localida" [(ngModel)]="direccion.ciudad" class="form-control" autofocus>
+             </div>
+
+            <h2>{{'estado' | translate}}</h2>
+                <div class="form-group">
+                    <select [(ngModel)]="direccion.estado" class="form-control" name="estado">
+                        <option *ngFor="let estado of estados" [value]="estado.nombre">
+                        {{ estado.nombre }}
+                        </option>
+                    </select>
+                </div>
+            <h2>{{'codigo.postal' | translate}}</h2>
+            <div class="form-group">
+            <input type="number" name="postal" placeholder="Codigo Postal" [(ngModel)]="direccion.postal" class="form-control" autofocus>
+            </div>
+        <h2>{{'pais' | translate}}</h2>
+            <div class="form-group">
+            <select [(ngModel)]="direccion.pais" class="form-control" name="pais">
+              <option *ngFor="let pais of paises" [value]="pais.nombre">
+                {{ pais.nombre }}
+              </option>
+            </select>
+          </div>
+            <h2>{{'numero.telefono' | translate}}</h2>
+            <div class="form-group">
+                <input type="number" name="telefono" placeholder="Numero Telefonico" [(ngModel)]="direccion.telefono" class="form-control" autofocus>
+            </div>
+
+        <button class="btn btn-success btn-block" (click)="saveNewSucursal()">
+            {{'guardar'| translate}}
+        </button>
+    </form>              
+    </div>
+    
+    
+        <div class="container">
+            <h3>{{sucursal.nombre == '' ? ('name' | translate) : sucursal.nombre}}</h3>
+            <p>{{direccion.numero == '' ? ('numero.casa' | translate) : direccion.numero}}</p>
+            <p>{{direccion.calle == '' ? ('nombre.calle' | translate) : direccion.calle}}</p>
+            <p>{{direccion.ciudad == '' ? ('ciudad' | translate) : direccion.ciudad}}</p>
+            <p>{{direccion.estado == '' ? ('estado' | translate) : direccion.estado}}</p>
+            <p>{{direccion.postal == '' ? ('codigo.postal' | translate) : direccion.postal}}</p>
+            <p>{{direccion.pais == '' ? ('pais' | translate) : direccion.pais}}</p>
+            <p>{{direccion.telefono == '' ? ('numero.telefono' | translate) : direccion.telefono}}</p>
+        </div>
+</div>

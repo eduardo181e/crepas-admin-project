@@ -1,0 +1,91 @@
+<h1>{{'menu.crepas.salada.botanas.stock'| translate}}</h1>
+<div class="dulce12 container" [ngStyle]="!facturas1() ? {'padding-bottom': '1px'} : {'padding-bottom': '0px'}">
+    <div *ngIf="!facturas1()" class="void">
+        {{'warning.stock'| translate}}
+    </div>
+    <table class="table" *ngIf="facturas1()">
+        <thead>
+            <tr>
+                <th class="border-cell dulce">{{'crepas.botana.edit.ensalada'| translate}}</th>
+                <th class="border-cell dulce">{{'product.id'| translate}}</th>
+                <th class="border-cell dulce">{{'Sucursal.id'| translate}}</th>
+                <th class="border-cell dulce">{{'existencia'| translate}}</th>
+                <th class="border-cell dulce">{{'inventario'| translate}}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let botana of botanas">
+                <td class="border-cell dulce1">{{ botana.botana }}</td>
+                <td class="border-cell dulce1">{{ botana.product_id }}</td>
+                <td class="border-cell dulce1">{{ botana.sucursal_id }}</td>
+                <td class="border-cell dulce1">               
+                    <div style="position: relative;"><p class="parrafo" *ngIf="botana.cantidad === 1">{{botana.existencia === 0 ? 'false' : 'true'}}</p></div>      
+                    
+                    <select *ngIf="botana.cantidad === 0" (change)="actualizarExistencia(botana, botana.product_id)" [(ngModel)]="botana.existencia" class="form-control" name="cantidad">
+                    <option  [value]= "0">
+                        false
+                    </option>
+                    <option  [value]= "1">
+                        true
+                    </option>
+                </select>
+            </td>
+            <td class="border-cell dulce1">
+                <p *ngIf="botana.cantidad === 0">{{'warning.stock.false.req'| translate}}</p>
+                    
+                <input *ngIf="botana.cantidad === 1" type="number" [(ngModel)]="botana.inventario" (keyup.enter)="actualizaInventario(botana, botana.product_id)" (input)="existencia(botana)">
+            </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="containerRes" style="background-color: oldlace; padding-bottom: 10px;">
+    <div *ngIf="!facturas1()" class="void">
+        {{'warning.stock'| translate}}
+    </div>
+    <!-- Tabla de productos de crepa dulce -->
+    <div class="ContRes" style="border: 5px solid;" *ngFor="let botana of botanas">
+    <div class="dulceRes">
+        <div class="Col">
+                <div class="dulce">{{'crepas.botana.edit.ensalada'| translate}}</div>
+                <div class="padd">{{ botana.botana }}</div>
+        </div>
+        <div class="Col">
+            <div class="dulce">{{'product.id'| translate}}</div>
+            <div class="padd">
+                {{botana.product_id}}
+            </div>
+    </div>
+    <div class="Col">
+        <div class="dulce">{{'Sucursal.id'| translate}}</div>
+        <div class="padd">{{botana.sucursal_id}}</div>    
+</div>
+<div class="Col">
+    <div class="dulce">{{'existencia'| translate}}</div>
+    <div class="padd">
+        <div style="position: relative;"><p class="parrafo" *ngIf="botana.cantidad === 1">{{botana.existencia === 0 ? 'false' : 'true'}}</p></div>      
+                    
+        <select *ngIf="botana.cantidad === 0" (change)="actualizarExistencia(botana, botana.product_id)" [(ngModel)]="botana.existencia" class="form-control" name="cantidad">
+        <option  [value]= "0">
+            false
+        </option>
+        <option  [value]= "1">
+            true
+        </option>
+    </select>
+    </div>    
+</div>
+<div class="Col">
+    <div class="dulce">{{'inventario'| translate}}</div>
+    <div class="padd">
+        <p *ngIf="botana.cantidad === 0">{{'warning.stock.false.req'| translate}}</p>
+                    
+        <input *ngIf="botana.cantidad === 1" type="number" [(ngModel)]="botana.inventario" (keyup.enter)="actualizaInventario(botana, botana.product_id)" (input)="existencia(botana)">
+    </div>    
+</div>
+    </div>
+
+</div>
+</div>

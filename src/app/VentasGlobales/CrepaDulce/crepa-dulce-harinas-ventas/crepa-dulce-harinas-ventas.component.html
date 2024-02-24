@@ -1,0 +1,70 @@
+<h1>{{'menu.crepas.harina.dulce.ventas.global'| translate}}</h1>
+<div class="dulce12 container" [ngStyle]="!facturas1() ? {'padding-bottom': '1px'} : {'padding-bottom': '0px'}">
+    <div></div>
+    <div class="fecha"><p class="fecha2">{{'inicio'| translate}}<input class="fecha3" [(ngModel)]="fecha.fecha1" type="date"></p><p class="fecha1">{{'fin'| translate}}<input class="fecha3" [(ngModel)]="fecha.fecha2" type="date"></p><div class="generate"><button (click)="genarar()">{{'generate.sales'| translate}}</button></div></div>
+    <!-- Tabla de productos -->
+    <div *ngIf="!facturas1()" class="void">
+        {{'warning.sales'| translate}}
+    </div>
+<table *ngIf="facturas1()">
+    <thead>
+        <tr>
+            <th class="border-cell dulce r1">{{'crepas.dulces.harinas.edit.harina'| translate}}</th>
+            <th class="border-cell dulce">{{'product.id'| translate}}</th>
+            <th class="border-cell dulce">{{'Sucursal.id'| translate}}</th>
+            <th class="border-cell dulce">{{'Factura.id'| translate}}</th>
+            <th class="border-cell dulce">{{'ventas'| translate}}</th>
+            <th class="border-cell dulce r2">{{'fecha.hora'| translate}}</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let harina of harinas">
+            <td class="border-cell dulce1 r4">{{ harina.harina }}</td>
+            <td class="border-cell dulce1">{{ harina.product_id }}</td>
+            <td class="border-cell dulce1">{{ harina.sucursal_id }}</td>
+            <td (click)="viewFactura(harina.factura_id)" class="border-cell dulce1">{{ harina.factura_id }}</td>
+            <td class="border-cell dulce1">{{ harina.ventas }}</td>
+            <td class="border-cell dulce1 r3">{{ harina.created_at }}</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+
+<div class="containerRes" style="background-color: oldlace; padding-bottom: 10px;">
+    <div></div>
+    <div class="fecha"><p class="fecha2">{{'inicio'| translate}}<input class="fecha3" [(ngModel)]="fecha.fecha1" type="date"></p><p class="fecha1">{{'fin'| translate}}<input class="fecha3" [(ngModel)]="fecha.fecha2" type="date"></p><div class="generate"><button (click)="genarar()">{{'generate.sales'| translate}}</button></div></div>
+    <div *ngIf="!facturas1()" class="void">
+        {{'warning.sales'| translate}}
+    </div>
+    <!-- Tabla de productos de crepa dulce -->
+    <div class="ContRes" style="border: 5px solid;" *ngFor="let harina of harinas">
+    <div class="dulceRes">
+        <div class="Col">
+                <div class="dulce">{{'crepas.dulces.harinas.edit.harina'| translate}}</div>
+                <div class="padd">{{ harina.harina }}</div>
+        </div>
+    <div class="Col">
+        <div class="dulce">{{'product.id'| translate}}</div>
+        <div class="padd">{{harina.product_id}}</div>    
+</div>
+<div class="Col">
+    <div class="dulce">{{'Sucursal.id'| translate}}</div>
+    <div class="padd">{{harina.sucursal_id}}</div>    
+</div>
+<div (click)="viewFactura(harina.factura_id)" style="cursor: pointer;" class="Col">
+    <div class="dulce">{{'Factura.id'| translate}}</div>
+    <div class="padd">{{harina.factura_id}}</div>    
+</div>
+<div class="Col">
+    <div class="dulce">{{'ventas'| translate}}</div>
+    <div class="padd">{{harina.ventas}}</div>    
+</div>
+<div class="Col">
+    <div class="dulce">{{'fecha.hora'| translate}}</div>
+    <div class="padd">{{harina.created_at}}</div>    
+</div>
+    </div>
+
+</div>
+</div>

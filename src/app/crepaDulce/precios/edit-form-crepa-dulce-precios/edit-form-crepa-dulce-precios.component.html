@@ -1,0 +1,12 @@
+<div class="container">
+    <h1>{{'precio'| translate}}</h1>
+    <form>
+        <h2>{{precio.descripcion == '' ? ('precio.descripcion'| translate) : precio.descripcion}}</h2>
+        <div class="form-group">
+            <input type="number" name="precio" placeholder="precio" [(ngModel)]="precio.precio" class="form-control" autofocus>
+        </div>
+        <button class="btn btn-success btn-block" (click)="updatePrecio()">
+            {{'guardar'| translate}}
+        </button>
+    </form>               
+</div>

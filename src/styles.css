@@ -1,0 +1,290 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: "FontsCarta";
+    src: url("./fots/KaushanScript-Regular.ttf");
+  }
+html, body { height: 100%; }
+body { margin: 0; font-family: "FontsCarta"; padding: 0px;}
+*{
+    font-family: "FontsCarta"
+}
+
+body{
+    background-image: url(./backgrouds/HD-wallpaper-brown-wooden-boards-macro-brown-wooden-texture-wooden-backgrounds-wooden-textures-vertical-wooden-boards-brown-background.jpg);
+}
+
+.cdk-overlay-container{
+    position: absolute;
+    top: 0px;
+    width: 320px;
+    left: calc((100% - 320px) / 2);
+    z-index: 5;
+  }
+
+.table1{
+  width: 100%;
+}
+.infoInv{
+  margin-bottom: 10px;
+}
+.border-cell1 {
+  border-bottom: 0px;
+  padding: 8px;
+}
+
+
+.cant1{
+  display: none;
+}
+
+.btn1{
+  width: 100%;
+}
+
+.container1{
+  margin-left: 7.5%;
+  margin-right: 7.5%;
+  margin-top: 30px;
+  width: 85%;
+}
+.ingredient-list1{
+padding: 0px;
+  margin: 0px;  
+}
+
+
+
+.ingredient-list1 li {
+  list-style-type: none;
+  text-decoration: none;
+  text-align: center;
+}
+
+.table1{
+  margin-bottom: 20px;
+  border: none;
+  border-collapse: collapse;
+}
+
+
+.padd1{
+  padding-top: 10px;
+padding-bottom: 10px;
+color: white;
+}
+
+.dulce1{
+  background: #8c4b00;
+  color: white;
+  text-align: center;
+}
+
+.dulce12{
+  background: #8c4b00;
+  color: white;
+}
+
+.dulce12{
+
+  padding: 8px;
+  background: beige;
+  color: black;
+  text-align: center;
+
+}
+
+
+.r11{
+  border-radius: 10px 0px 0px 0px;
+}
+
+.r21{
+  border-radius: 0px 10px 0px 0px;
+}
+
+.r31{
+  border-radius: 0px 0px 10px 0px;
+}
+
+.r41{
+  border-radius: 0px 0px 0px 10px;
+}
+
+
+.realiz1 > button{
+  display: block;
+  float: right;
+  height: auto;
+  width: 40%;
+  background: blue;
+  color: white;
+  border: 0px;
+  border-radius: 10px;
+  margin-left: 50%;
+  font-size: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.realiz1{
+  height: 100px;
+}
+
+.list1{
+  padding: 10px;
+}
+
+
+.resTd, .resTh{
+  width: 5%;
+}
+
+
+.total1{
+  border-radius: 10px;
+  background-color: bisque;
+  height: 50px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.totalCant1{
+  display: block;
+  float: right;
+  height: 50px;
+  width: 150px;
+  padding: 16px;
+    padding-top: 16px;
+    padding-left: 16px;
+  padding-left: 195px;
+  font-size: 25px;
+  padding-top: 8px;
+}
+
+@media (max-width: 880px){
+  .table1{
+      margin-top: 10px;
+      margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 790px){
+  .container1{
+      margin-left: 0px;
+      margin-right: 0px;
+  }
+}
+
+.containerRes1{
+  display: none;
+}
+
+@media(max-width: 850px){
+  .containerRes1{
+      display: block;
+  }
+
+  .infoInv{
+    margin-top: 50px;
+  }
+
+  .container1{
+      display: none;
+  }
+  .dulceRes1{
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      flex-wrap: wrap;
+      background: #8c4b00;
+      text-align: center;
+  }
+  .waffleRes1{
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      flex-wrap: wrap;
+      background: #8c4b00;
+      text-align: center;
+  }
+
+  .canastaRes1{
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      flex-wrap: wrap;
+      background: #8c4b00;
+      text-align: center;
+  }
+  .saladaRes1{
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      flex-wrap: wrap;
+      background: #8c4b00;
+      text-align: center;
+  }
+
+  .calientesRes1{
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      flex-wrap: wrap;
+      background: #8c4b00;
+      text-align: center;
+  }
+
+  .friasRes1{
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      flex-wrap: wrap;
+      background: #8c4b00;
+      text-align: center;
+  }
+
+  .botanasRes1{
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      flex-wrap: wrap;
+      background: #8c4b00;
+      text-align: center; 
+  }
+
+  .ensaladaRes1{
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      flex-wrap: wrap;
+      background: #8c4b00;
+      text-align: center; 
+  }
+
+  .ContRes1{
+      margin-bottom: 10px;
+  }
+
+  .Col1{
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      flex-basis: 150px;
+      text-align: center;
+  }
+}
+
+.table1{
+  border-radius: 10px;
+}
+
+
+@media (max-width: 320px){
+  .cdk-overlay-container{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 5;
+    width: 100%;
+  }
+}

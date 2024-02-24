@@ -1,0 +1,97 @@
+<h1>{{'menu.crepas.salada.ensaladas.stock'| translate}}</h1>
+<div class="dulce12 container" [ngStyle]="!facturas1() ? {'padding-bottom': '1px'} : {'padding-bottom': '0px'}">
+    <div *ngIf="!facturas1()" class="void">
+        {{'warning.stock'| translate}}
+    </div>
+    <table class="table" *ngIf="facturas1()">
+        <thead>
+            <tr>
+                <th class="border-cell dulce">{{'crepas.ensalada.edit.ensalada'| translate}}</th>
+                <th class="border-cell dulce">{{'descripcion'| translate}}</th>
+                <th class="border-cell dulce">{{'product.id'| translate}}</th>
+                <th class="border-cell dulce">{{'Sucursal.id'| translate}}</th>
+                <th class="border-cell dulce">{{'existencia'| translate}}</th>
+                <th class="border-cell dulce">{{'inventario'| translate}}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let ensalada of ensaladas">
+                <td class="border-cell dulce1">{{ ensalada.ensalada_ind }}</td>
+                <td class="border-cell dulce1">{{ ensalada.descripcion }}</td>
+                <td class="border-cell dulce1">{{ ensalada.product_id }}</td>
+                <td class="border-cell dulce1">{{ ensalada.sucursal_id }}</td>
+                <td class="border-cell dulce1">               
+                    <div style="position: relative;"><p class="parrafo" *ngIf="ensalada.cantidad === 1">{{ensalada.existencia === 0 ? 'false' : 'true'}}</p></div>      
+                    
+                    <select *ngIf="ensalada.cantidad === 0" (change)="actualizarExistencia(ensalada, ensalada.product_id)" [(ngModel)]="ensalada.existencia" class="form-control" name="cantidad">
+                    <option  [value]= "0">
+                        false
+                    </option>
+                    <option  [value]= "1">
+                        true
+                    </option>
+                </select>
+            </td>
+            <td class="border-cell dulce1">
+                <p *ngIf="ensalada.cantidad === 0">{{'warning.stock.false.req'| translate}}</p>
+                    
+                <input *ngIf="ensalada.cantidad === 1" type="number" [(ngModel)]="ensalada.inventario" (keyup.enter)="actualizaInventario(ensalada, ensalada.product_id)" (input)="existencia(ensalada)">
+            </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="containerRes" style="background-color: oldlace; padding-bottom: 10px;">
+    <div *ngIf="!facturas1()" class="void">
+        {{'warning.stock'| translate}}
+    </div>
+    <!-- Tabla de productos de crepa dulce -->
+    <div class="ContRes" style="border: 5px solid;" *ngFor="let ensalada of ensaladas">
+    <div class="dulceRes">
+        <div class="Col">
+                <div class="dulce">{{'crepas.ensalada.edit.ensalada'| translate}}</div>
+                <div class="padd">{{ ensalada.ensalada_ind }}</div>
+        </div>
+        <div class="Col">
+            <div class="dulce">{{'descripcion'| translate}}</div>
+            <div class="padd">{{ ensalada.descripcion }}</div>
+    </div>
+        <div class="Col">
+            <div class="dulce">{{'product.id'| translate}}</div>
+            <div class="padd">
+                {{ensalada.product_id}}
+            </div>
+    </div>
+    <div class="Col">
+        <div class="dulce">{{'Sucursal.id'| translate}}</div>
+        <div class="padd">{{ensalada.sucursal_id}}</div>    
+</div>
+<div class="Col">
+    <div class="dulce">{{'existencia'| translate}}</div>
+    <div class="padd">
+        <div style="position: relative;"><p class="parrafo" *ngIf="ensalada.cantidad === 1">{{ensalada.existencia === 0 ? 'false' : 'true'}}</p></div>      
+                    
+        <select *ngIf="ensalada.cantidad === 0" (change)="actualizarExistencia(ensalada, ensalada.product_id)" [(ngModel)]="ensalada.existencia" class="form-control" name="cantidad">
+        <option  [value]= "0">
+            false
+        </option>
+        <option  [value]= "1">
+            true
+        </option>
+    </select>
+    </div>    
+</div>
+<div class="Col">
+    <div class="dulce">{{'inventario'| translate}}</div>
+    <div class="padd">
+        <p *ngIf="ensalada.cantidad === 0">Este producto no requiere inventario</p>
+                    
+        <input *ngIf="ensalada.cantidad === 1" type="number" [(ngModel)]="ensalada.inventario" (keyup.enter)="actualizaInventario(ensalada, ensalada.product_id)" (input)="existencia(ensalada)">
+    </div>    
+</div>
+    </div>
+
+</div>
+</div>

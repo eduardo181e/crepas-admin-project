@@ -1,0 +1,51 @@
+<div class="every">
+    <div class="container">
+        <h1>{{'crepas.ingrediente.create'| translate}}</h1>
+        <form>
+            <h2>{{'crepas.ingrediente.edit.ingrediente'| translate}}</h2>
+            <div class="form-group">
+                <input type="text" name="ingrediente_com" placeholder="ingrediente" [(ngModel)]="ingrediente.ingrediente_com" class="form-control" autofocus>
+            </div>
+            <h2>{{'crepas.ingrediente.com.tipo'| translate}}</h2>
+            <div class="form-group">
+                <select [(ngModel)]="ingrediente.tipo" class="form-control" name="tipo">
+                    <option  value= "Fruta">
+                        {{'crepas.ingrediente.com.edit.frutas'| translate}}
+                    </option>
+                    <option  value= "Frutos Secos">
+                        {{'crepas.ingrediente.com.edit.frutos.secos'| translate}}
+                    </option>
+                    <option  value= "Otros">
+                        {{'crepas.ingrediente.com.edit.otros'| translate}}
+                    </option>
+                </select>
+            </div>                     
+            <h2>{{'inventario'| translate}}</h2>
+            <div class="form-group">           
+                <select [(ngModel)]="ingrediente.inventario" class="form-control" name="inventario">
+                <option  [value]= "0">
+                    false
+                </option>
+                <option  [value]= "1">
+                    true
+                </option>
+            </select>
+        </div> 
+            <button class="btn btn-success btn-block" (click)="saveNewIngrediente()">
+                {{'guardar'| translate}}
+            </button>
+        </form>               
+    </div>
+    
+    
+        <div class="container">
+            <h3>{{ingrediente.ingrediente_com == '' ? ('crepas.dulces.ingredientes.com'| translate) : ingrediente.ingrediente_com}}</h3>
+            <h3>{{ingrediente.tipo == '' ? ('warning.ingrediente.com.tipo'| translate) : ingrediente.tipo}}</h3>
+            <p>
+                {{ingrediente.inventario === '' ? ('inventario.none'| translate) :
+                  ingrediente.inventario === '0' ? ('inventario.false'| translate) :
+                  ingrediente.inventario === '1' ? ('inventario.true'| translate) :
+                  ('inventario.none'| translate)}}
+              </p>
+        </div>
+</div>

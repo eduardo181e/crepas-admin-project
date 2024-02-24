@@ -1,0 +1,64 @@
+
+
+@import url('../../../styles/tableStyles.css');
+.container12{
+  margin-left: 7.5%;
+  margin-right: 7.5%;
+  margin-top: 30px;
+}
+
+.void{
+  margin-top: 30px;
+  background: aqua;
+  width: 30%;
+  margin-left: 37%;
+  height: auto;
+  line-height: 1;
+  border-radius: 10px;
+  font-size: 18px;
+  margin-bottom: 25px;
+  padding-top: 10px;
+padding-bottom: 10px;
+text-align: center;
+font-size: 35px;
+}
+.sucursal{
+  background: beige;
+  width: 155px;
+  height: auto;
+  border-radius: 10px;
+  padding: 14px;
+  margin-left: 5%;
+  margin-bottom: 15px;
+  font-size: 24px;
+  color: brown;
+}
+
+.edit{
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  background: blue;
+  display: block;
+  width: 50%;
+}
+
+.admin{
+  background: green;
+  color: white;
+  text-align: center;
+}
+
+.delete{
+  background: red;
+  border-radius: 5px;
+  width: 10%;
+  font-size: 20px;
+}
+@media (max-width: 1320px){
+
+  .void{
+      width: 90%;
+      margin-left: 5%;
+  }
+}

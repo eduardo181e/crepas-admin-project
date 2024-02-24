@@ -1,0 +1,72 @@
+<h1>
+    {{'ensaladas.individuales'| translate}}
+</h1>
+<div class="container">
+    <div class="sucursal" (click)="navigateCreate()">
+        <div class="link" >{{'crepas.ensalada.create'| translate}}</div>
+    </div>
+                
+<table class="table">
+    <thead class="bg-dark text-white">
+        <tr>
+            <th class="border-cell dulce r1">{{'crepas.ensalada.create'| translate}}</th>
+            <th class="border-cell dulce">{{'descripcion'| translate}}</th>
+            <th class="border-cell dulce">{{'stock'| translate}}</th>
+            <th class="border-cell dulce r2">{{'accions'| translate}}</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let ensalada of ensaladas">
+            <td class="border-cell dulce1">{{ensalada.ensalada_ind}}</td>
+            <td class="border-cell dulce1">{{ensalada.descripcion}}</td>
+            <td class="border-cell dulce1">{{ensalada.inventario === 0 ? ('inventario.false'| translate) : ('inventario.true'| translate)}}</td>
+            <td class="border-cell dulce1">
+            <div style="position: relative; display: flex;">
+                <button class="delete" (click)="deleteEnsalada(ensalada.id)">
+                    <i class="far fa-trash-alt"></i>
+                </button>
+                <a (click)="navigateEdit(ensalada.id)" class="btn edit">
+                    {{'crepas.ensalada.edit'| translate}}
+                </a>
+            </div>
+            </td>
+        </tr>
+    </tbody>
+</table>    
+</div>
+
+
+<div class="containerRes">
+
+    <div class="sucursal">
+        <div class="link" (click)="navigateCreate()">{{'crepas.ensalada.create'| translate}}</div>
+    </div>
+    <!-- Tabla de productos de crepa dulce -->
+    <div class="ContRes" *ngFor="let ensalada of ensaladas">
+    <div class="dulceRes">
+        <div class="Col">
+                <div class="dulce">{{'crepas.ensalada.create'| translate}}</div>
+                <div class="padd">{{ ensalada.ensalada_ind }}</div>
+        </div>
+        <div class="Col">
+            <div class="dulce">{{'descripcion'| translate}}</div>
+            <div class="padd">{{ ensalada.descripcion }}</div>
+    </div>
+        <div class="Col">
+            <div class="dulce">{{'stock'| translate}}</div>
+            <div class="padd">
+                {{ensalada.inventario === 0 ? ('inventario.false'| translate) : ('inventario.true'| translate)}}
+            </div>
+    </div>
+
+
+</div>
+<div class="accions">
+    <div class="editRes" style="overflow: hidden;" (click)="navigateEdit(ensalada.id)">
+        {{'crepas.ensalada.edit'| translate}}
+    </div>
+    <div class="deleteRes" style="overflow: hidden;" (click)="deleteEnsalada(ensalada.id)">
+        <i class="far fa-trash-alt"></i> {{'delete'| translate}}
+    </div>        
+    </div>
+    </div>
