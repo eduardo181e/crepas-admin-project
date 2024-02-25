@@ -85,6 +85,20 @@ export class CrepaSaladaBotanaStockComponent {
       inventario: botana.inventario
     };
 
+    function esDecimal(numero:any) {
+
+      return !Number.isInteger(numero);
+    }
+    
+    if(esDecimal(botana1.inventario)){
+      if(this.authService.lang() === 'es'){
+        this.alertService.mostrarAlerta('No se admiten numeros decimales')
+        this.router.navigate(['admin']);
+        }else if(this.authService.lang() === 'en'){
+          this.alertService.mostrarAlerta('Decimal numbers are not allowed')
+        }
+    }else{
+
     this.botanaService.updateStockBotana(id, botana1).subscribe(
       res => {
         this.botanaService.getBotanas(this.botana1).subscribe(
@@ -115,6 +129,8 @@ export class CrepaSaladaBotanaStockComponent {
               }
               }
     );
+
+            }
   
 }
 

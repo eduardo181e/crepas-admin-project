@@ -33,7 +33,13 @@
             <td class="border-cell dulce1">
                 <p *ngIf="harina.cantidad === 0">Este producto no requiere inventario</p>
                     
-                <input *ngIf="harina.cantidad === 1" type="number" [(ngModel)]="harina.inventario" (keyup.enter)="actualizaInventario(harina, harina.product_id)" (input)="existencia(harina)">
+                <div *ngIf="harina.cantidad === 1" style="display: flex;">
+                    <input style="flex-basis: 90%;" type="number" [(ngModel)]="harina.inventario"  (input)="existencia(harina)">
+                    <i style="color: black;
+                    background: aqua;
+                    flex-basis: 8%;
+                    padding-top: 4px;" class="fas fa-undo-alt" (click)="actualizaInventario(harina, harina.product_id)"></i>                    
+                    </div>
             </td>
             </tr>
         </tbody>
@@ -82,7 +88,13 @@
     <div class="padd">
         <p *ngIf="harina.cantidad === 0">Este producto no requiere inventario</p>
                     
-        <input *ngIf="harina.cantidad === 1" type="number" [(ngModel)]="harina.inventario" (keyup.enter)="actualizaInventario(harina, harina.product_id)" (input)="existencia(harina)">
+        <div *ngIf="harina.cantidad === 1" style="display: flex;">
+            <input style="flex-basis: 90%;" type="number" [(ngModel)]="harina.inventario"  (input)="existencia(harina)">
+            <i style="color: black;
+            background: aqua;
+            flex-basis: 8%;
+            padding-top: 4px;" class="fas fa-undo-alt" (click)="actualizaInventario(harina, harina.product_id)"></i>                    
+            </div>
     </div>    
 </div>
     </div>

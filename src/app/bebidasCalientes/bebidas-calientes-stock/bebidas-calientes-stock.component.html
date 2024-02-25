@@ -35,7 +35,14 @@
             <td class="border-cell dulce1">
                 <p *ngIf="bebida.cantidad === 0">{{'warning.stock.false.req'| translate}}</p>
                     
-                <input *ngIf="bebida.cantidad === 1" type="number" [(ngModel)]="bebida.inventario" (keyup.enter)="actualizaInventario(bebida, bebida.product_id)" (input)="existencia(bebida)">
+                <div *ngIf="bebida.cantidad === 1" style="display: flex;">
+                <input style="flex-basis: 90%;" type="number" [(ngModel)]="bebida.inventario"  (input)="existencia(bebida)">
+                <i style="color: black;
+                background: aqua;
+                flex-basis: 8%;
+                padding-top: 4px;" class="fas fa-undo-alt" (click)="actualizaInventario(bebida, bebida.product_id)"></i>                    
+                </div>
+
             </td>
             </tr>
         </tbody>
@@ -88,7 +95,13 @@
     <div class="padd">
         <p *ngIf="bebida.cantidad === 0">{{'warning.stock.false.req'| translate}}</p>
                     
-        <input *ngIf="bebida.cantidad === 1" type="number" [(ngModel)]="bebida.inventario" (keyup.enter)="actualizaInventario(bebida, bebida.product_id)" (input)="existencia(bebida)">
+        <div *ngIf="bebida.cantidad === 1" style="display: flex;">
+            <input style="flex-basis: 90%;" type="number" [(ngModel)]="bebida.inventario"  (input)="existencia(bebida)">
+            <i style="color: black;
+            background: aqua;
+            flex-basis: 8%;
+            padding-top: 4px;" class="fas fa-undo-alt" (click)="actualizaInventario(bebida, bebida.product_id)"></i>                    
+            </div>
     </div>    
 </div>
     </div>

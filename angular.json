@@ -12,7 +12,14 @@
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
-          "options": {
+          "options": {"allowedCommonJsDependencies": [
+            "jspdf-autotable",
+            "raf",
+            "core-js",
+            "dompurify",
+            "html2canvas",
+            "rgbcolor"
+          ],
             "outputPath": "dist/admin-crepas",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -34,13 +41,13 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "5000kb",
+                  "maximumError": "10mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumWarning": "200kb",
+                  "maximumError": "40kb"
                 }
               ],
               "outputHashing": "all"

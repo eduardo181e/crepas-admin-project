@@ -12,7 +12,7 @@
         </div>
         <h2>{{'lang'| translate}}</h2>
         <div class="form-group">
-            <select (click)="changeLanguage()" [(ngModel)]="lang" class="form-control" name="lang">
+            <select (change)="changeLanguage()" [(ngModel)]="lang" class="form-control" name="lang">
                 <option  value= "es">
                     {{'spanish'| translate}}
                 </option>

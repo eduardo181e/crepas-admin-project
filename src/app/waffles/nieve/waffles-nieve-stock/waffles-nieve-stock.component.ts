@@ -46,6 +46,7 @@ export class WafflesNieveStockComponent {
         cantidad: nieve.cantidad
       };
 
+
       this.stock.updateStockNieve(id, nieve1).subscribe(
         res => {
           this.stock.getNieves(this.bebida1).subscribe(
@@ -76,6 +77,7 @@ export class WafflesNieveStockComponent {
               }
               }
       );
+            
     }
   }
 
@@ -86,6 +88,21 @@ export class WafflesNieveStockComponent {
       cantidad: nieve.cantidad,
       inventario: nieve.inventario
     };
+
+    function esDecimal(numero:any) {
+
+      return !Number.isInteger(numero);
+    }
+
+    if(esDecimal(nieve1.inventario)){
+      if(this.authService.lang() === 'es'){
+        this.alertService.mostrarAlerta('No se admiten numeros decimales')
+        this.router.navigate(['admin']);
+        }else if(this.authService.lang() === 'en'){
+          this.alertService.mostrarAlerta('Decimal numbers are not allowed')
+        }
+    }else{
+
 
     this.stock.updateStockNieve(id, nieve1).subscribe(
       res => {
@@ -117,6 +134,7 @@ export class WafflesNieveStockComponent {
               }
               }
     );
+            }
   }
 
   existencia(nieve: any) {

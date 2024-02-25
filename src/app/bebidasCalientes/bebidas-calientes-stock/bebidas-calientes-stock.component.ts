@@ -91,7 +91,19 @@ export class BebidasCalientesStockComponent {
         cantidad: bebida.cantidad,
         inventario: bebida.inventario
       };
+      function esDecimal(numero:any) {
 
+        return !Number.isInteger(numero);
+      }
+      
+      if(esDecimal(bebida1.inventario)){
+        if(this.authService.lang() === 'es'){
+          this.alertService.mostrarAlerta('No se admiten numeros decimales')
+          this.router.navigate(['admin']);
+          }else if(this.authService.lang() === 'en'){
+            this.alertService.mostrarAlerta('Decimal numbers are not allowed')
+          }
+      }else{
       this.stock.updateStockBebidaCaliente(id, bebida1).subscribe(
         res => {
           this.stock.getBebidasCalientes(this.bebida1).subscribe(
@@ -124,7 +136,10 @@ export class BebidasCalientesStockComponent {
         }
         }
 
-      );
+      );        
+      }
+
+
     
   }
 

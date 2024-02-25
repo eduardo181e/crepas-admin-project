@@ -90,6 +90,20 @@ export class CrepaDulceIngredientesComplementariosStockComponent {
         inventario: ingrediente.inventario
       };
 
+      function esDecimal(numero:any) {
+
+        return !Number.isInteger(numero);
+      }
+      
+      if(esDecimal(ingrediente1.inventario)){
+        if(this.authService.lang() === 'es'){
+          this.alertService.mostrarAlerta('No se admiten numeros decimales')
+          this.router.navigate(['admin']);
+          }else if(this.authService.lang() === 'en'){
+            this.alertService.mostrarAlerta('Decimal numbers are not allowed')
+          }
+      }else{
+
       this.stock.updateStockIngredienteComplementario(id, ingrediente1).subscribe(
         res => {
           this.stock.getIngredientesComplementarios(this.ingrediente1).subscribe(
@@ -120,6 +134,7 @@ export class CrepaDulceIngredientesComplementariosStockComponent {
           }
           }
       );
+        }
     }
 
     existencia(ingrediente: any) {

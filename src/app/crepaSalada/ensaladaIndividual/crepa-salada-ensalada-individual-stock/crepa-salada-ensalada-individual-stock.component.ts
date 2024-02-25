@@ -85,6 +85,20 @@ export class CrepaSaladaEnsaladaIndividualStockComponent {
       inventario: ensalada.inventario
     };
 
+    function esDecimal(numero:any) {
+
+      return !Number.isInteger(numero);
+    }
+    
+    if(esDecimal(ensalada1.inventario)){
+      if(this.authService.lang() === 'es'){
+        this.alertService.mostrarAlerta('No se admiten numeros decimales')
+        this.router.navigate(['admin']);
+        }else if(this.authService.lang() === 'en'){
+          this.alertService.mostrarAlerta('Decimal numbers are not allowed')
+        }
+    }else{
+
     this.stock.updateStockEnsaladaIndividual(id, ensalada1).subscribe(
       res => {
         this.stock.getEnsaladasIndividuales(this.ensalada1).subscribe(
@@ -115,6 +129,8 @@ export class CrepaSaladaEnsaladaIndividualStockComponent {
               }
               }
     );
+
+            }
   
 }
 
