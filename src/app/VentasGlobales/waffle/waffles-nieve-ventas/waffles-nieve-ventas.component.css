@@ -20,7 +20,7 @@
 
 .generate {
     position: absolute;
-    left: 341px;
+    left: 350px;
     top: 18px;
     width: 100px;
   }
@@ -28,9 +28,10 @@
  .fecha{
     position: relative;
     margin-top: 70px;
-    width: 340px;
+    width: auto;
     height: 0px;
     padding-top: 25px;
+    margin-bottom: 40px;
   }
 
  .dulce12{

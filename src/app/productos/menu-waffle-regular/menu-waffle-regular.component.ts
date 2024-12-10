@@ -20,4 +20,7 @@ export class MenuWaffleRegularComponent {
   navigatePrecios(){
     this.router.navigate(['wafflesPrecio']);
   }
+  navigateDecoracion(){
+    this.router.navigate(['wafflesDecoracion']);
+  }
 }

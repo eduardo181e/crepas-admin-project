@@ -21,4 +21,7 @@ export class MenuWaffleCanastaComponent {
   navigatePrecios(){
     this.router.navigate(['wafflesCanastaPrecio']);
   }
+  navigateDecoracion(){
+    this.router.navigate(['wafflesCanastaDecoracion']);
+  }
 }

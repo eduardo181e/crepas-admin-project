@@ -188,6 +188,21 @@ import { MenuWaffleRegularSalesGlobalComponent } from './salesGlobal/menu-waffle
 import { MenuWaffleStockRegularComponent } from './stocks/menu-waffle-regular/menu-waffle-regular.component';
 import { ChangePasswordComponent } from './account/change-password/change-password.component';
 import { AccountConfigComponent } from './account/account-config/account-config.component';
+import { DecoracionesWaffleCanastaComponent } from './waffleCanasta/decoracion/decoracion/decoracion.component';
+import { EditFormDecoracionWaffleCanastaComponent } from './waffleCanasta/decoracion/edit-form-decoracion/edit-form-decoracion.component';
+import { WaffleCanastadecoracionesStockComponent } from './waffleCanasta/decoracion/waffle-canasta-decoracion-stock/waffle-canasta-decoracion-stock.component';
+import { WaffleCanastadecoracionesVentasComponent } from './waffleCanasta/decoracion/waffle-canasta-decoracion-ventas/waffle-canasta-decoracion-ventas.component';
+import { WaffleCanastaDecoracionVentasGlobalesComponent } from './VentasGlobales/waffleCanasta/waffle-canasta-decoracion-ventas/waffles-canasta-decoracion-ventas.component';
+import { DecoracionesWaffleComponent } from './waffles/decoracion/decoracion/decoracion.component';
+import { EditFormDecoracionWaffleComponent } from './waffles/decoracion/edit-form-decoracion/edit-form-decoracion.component';
+import { WaffleDecoracionesStockComponent } from './waffles/decoracion/waffle-decoracion-stock/waffle-decoracion-stock.component';
+import { WaffleDecoracionesVentasComponent } from './waffles/decoracion/waffle-decoracion-ventas/waffle-decoracion-ventas.component';
+import { WaffleDecoracionVentasGlobalesComponent } from './VentasGlobales/waffle/waffles-decoracion-ventas/waffles-decoracion-ventas.component';
+import { EditFormDecoracionCrepaDulceComponent } from './crepaDulce/decoracion/edit-form-decoracion/edit-form-decoracion.component';
+import { DecoracionesCrepaDulceComponent } from './crepaDulce/decoracion/decoracion/decoraciones.component';
+import { CreapaDulceDecoracionesStockComponent } from './crepaDulce/decoracion/waffle-decoracion-stock/crepa-dulce-decoracion-stock.component';
+import { CrepaDulceDecoracionesVentasComponent } from './crepaDulce/decoracion/waffle-decoracion-ventas/crepa-dulce-decoracion-ventas.component';
+import { CrepaDulceDecoracionVentasGlobalesComponent } from './VentasGlobales/CrepaDulce/crepa-dulce-decoracion-ventas/crepa-dulce-decoracion-ventas.component';
 
 const routes: Routes = [  
   {path: 'principal', component: MenuPrincipalComponent,  canActivate:[AuthGuard]},
@@ -269,6 +284,12 @@ const routes: Routes = [
   {path: 'crepaDulceNieveStock', component: CrepaDulceNieveStockComponent, canActivate:[AuthGuard, AuthGuard1]},
   {path: 'crepaDulceNieveSales', component: CrepaDulceNieveVentasComponent, canActivate:[AuthGuard, AuthGuard1]},
   {path: 'crepaDulceNieveSalesGlobal', component: CrepaDulceNieveVentasGlobalesComponent, canActivate:[AuthGuard, AuthGuard1]},
+  // Crepa Dulce Decoracion
+  {path: 'editCrepaDulceDecoracion/:id', component: EditFormDecoracionCrepaDulceComponent, canActivate:[AuthGuard]},
+  {path: 'crepaDulceDecoracion', component: DecoracionesCrepaDulceComponent, canActivate:[AuthGuard]},
+  {path: 'crepaDulceDecoracionStock', component: CreapaDulceDecoracionesStockComponent, canActivate:[AuthGuard, AuthGuard1]},
+  {path: 'crepaDulceDecoracionSales', component: CrepaDulceDecoracionesVentasComponent, canActivate:[AuthGuard, AuthGuard1]},
+  {path: 'crepaDulceDecoracionSalesGlobal', component: CrepaDulceDecoracionVentasGlobalesComponent, canActivate:[AuthGuard, AuthGuard1]},
   // Crepa Dulce Precio
   {path: 'createCrepaDulcePrecio', component: CreateFormCrepaDulcePreciosComponent, canActivate:[AuthGuard]},
   {path: 'editCrepaDulcePrecio/:id', component: EditFormCrepaDulcePreciosComponent, canActivate:[AuthGuard]},
@@ -340,6 +361,13 @@ const routes: Routes = [
   {path: 'wafflesNieveStock', component: WafflesNieveStockComponent, canActivate:[AuthGuard, AuthGuard1]},
   {path: 'wafflesNieveSales', component: WafflesNieveVentasComponent, canActivate:[AuthGuard, AuthGuard1]},
   {path: 'wafflesNieveSalesGlobal', component: WafflesNieveVentasGlobalesComponent, canActivate:[AuthGuard, AuthGuard1]},
+  
+  // Waffles Decoracion
+  {path: 'wafflesDecoracion', component: DecoracionesWaffleComponent, canActivate:[AuthGuard]},
+  {path: 'editWafflesDecoracion/:id', component: EditFormDecoracionWaffleComponent, canActivate:[AuthGuard]},
+  {path: 'wafflesDecoracionStock', component: WaffleDecoracionesStockComponent, canActivate:[AuthGuard, AuthGuard1]},
+  {path: 'wafflesDecoracionSales', component: WaffleDecoracionesVentasComponent, canActivate:[AuthGuard, AuthGuard1]},
+  {path: 'wafflesDecoracionSalesGlobal', component: WaffleDecoracionVentasGlobalesComponent, canActivate:[AuthGuard, AuthGuard1]},
   // Waffles Precio
   {path: 'wafflesPrecio', component: PrecioComponent, canActivate:[AuthGuard]},
   {path: 'createWafflesPrecio', component: CreateFormPrecioComponent, canActivate:[AuthGuard]},
@@ -392,6 +420,14 @@ const routes: Routes = [
   {path: 'wafflesCanastaNieveStock', component: WaffleCanastaNievesStockComponent, canActivate:[AuthGuard, AuthGuard1]},
   {path: 'wafflesCanastaNieveSales', component: WaffleCanastaNievesVentasComponent, canActivate:[AuthGuard, AuthGuard1]},
   {path: 'wafflesCanastaNieveSalesGlobal', component: WaffleCanastaNievesVentasGlobalesComponent, canActivate:[AuthGuard, AuthGuard1]},
+
+  // Waffles Canasta Decoracion
+  {path: 'wafflesCanastaDecoracion', component: DecoracionesWaffleCanastaComponent, canActivate:[AuthGuard]},
+  {path: 'editWafflesCanastaDecoracion/:id', component: EditFormDecoracionWaffleCanastaComponent, canActivate:[AuthGuard]},
+  {path: 'wafflesCanastaDecoracionStock', component: WaffleCanastadecoracionesStockComponent, canActivate:[AuthGuard, AuthGuard1]},
+  {path: 'wafflesCanastaDecoracionSales', component: WaffleCanastadecoracionesVentasComponent, canActivate:[AuthGuard, AuthGuard1]},
+  {path: 'wafflesCanastaDecoracionSalesGlobal', component: WaffleCanastaDecoracionVentasGlobalesComponent, canActivate:[AuthGuard, AuthGuard1]},
+
   {path: '', redirectTo: 'admin', pathMatch: 'full'},
 ];
 

@@ -194,6 +194,21 @@ import { AccountConfigComponent } from './account/account-config/account-config.
 import { TranslateModule } from './translate/translate.module';
 import { TranslateService } from './translate/translate.service';
 import { TranslatePipe } from './translate/translate.pipe';
+import { WaffleDecoracionVentasGlobalesComponent } from './VentasGlobales/waffle/waffles-decoracion-ventas/waffles-decoracion-ventas.component';
+import { WaffleDecoracionesStockComponent } from './waffles/decoracion/waffle-decoracion-stock/waffle-decoracion-stock.component';
+import { WaffleDecoracionesVentasComponent } from './waffles/decoracion/waffle-decoracion-ventas/waffle-decoracion-ventas.component';
+import { DecoracionesWaffleComponent } from './waffles/decoracion/decoracion/decoracion.component';
+import { WaffleCanastadecoracionesStockComponent } from './waffleCanasta/decoracion/waffle-canasta-decoracion-stock/waffle-canasta-decoracion-stock.component';
+import { WaffleCanastadecoracionesVentasComponent } from './waffleCanasta/decoracion/waffle-canasta-decoracion-ventas/waffle-canasta-decoracion-ventas.component';
+import { WaffleCanastaDecoracionVentasGlobalesComponent } from './VentasGlobales/waffleCanasta/waffle-canasta-decoracion-ventas/waffles-canasta-decoracion-ventas.component';
+import { DecoracionesWaffleCanastaComponent } from './waffleCanasta/decoracion/decoracion/decoracion.component';
+import { CrepaDulceDecoracionVentasGlobalesComponent } from './VentasGlobales/CrepaDulce/crepa-dulce-decoracion-ventas/crepa-dulce-decoracion-ventas.component';
+import { CrepaDulceDecoracionesVentasComponent } from './crepaDulce/decoracion/waffle-decoracion-ventas/crepa-dulce-decoracion-ventas.component';
+import { CreapaDulceDecoracionesStockComponent } from './crepaDulce/decoracion/waffle-decoracion-stock/crepa-dulce-decoracion-stock.component';
+import { DecoracionesCrepaDulceComponent } from './crepaDulce/decoracion/decoracion/decoraciones.component';
+import { EditFormDecoracionCrepaDulceComponent } from './crepaDulce/decoracion/edit-form-decoracion/edit-form-decoracion.component';
+import { EditFormDecoracionWaffleCanastaComponent } from './waffleCanasta/decoracion/edit-form-decoracion/edit-form-decoracion.component';
+import { EditFormDecoracionWaffleComponent } from './waffles/decoracion/edit-form-decoracion/edit-form-decoracion.component';
 
 
 export function translateFactory(provider: TranslateService) {
@@ -378,6 +393,21 @@ export function translateFactory(provider: TranslateService) {
     MenuWaffleRegularSalesGlobalComponent,
     ChangePasswordComponent,
     AccountConfigComponent,
+    WaffleDecoracionVentasGlobalesComponent,
+    WaffleDecoracionesStockComponent,
+    WaffleDecoracionesVentasComponent,
+    DecoracionesWaffleComponent,
+    EditFormDecoracionWaffleComponent,
+    WaffleCanastadecoracionesStockComponent,
+    WaffleCanastadecoracionesVentasComponent,
+    WaffleCanastaDecoracionVentasGlobalesComponent,
+    DecoracionesWaffleCanastaComponent,
+    EditFormDecoracionWaffleCanastaComponent,
+    CrepaDulceDecoracionVentasGlobalesComponent,
+    CrepaDulceDecoracionesVentasComponent,
+    CreapaDulceDecoracionesStockComponent,
+    DecoracionesCrepaDulceComponent,
+    EditFormDecoracionCrepaDulceComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,103 @@
+<h1>{{'menu.crepas.decoracion.dulce.stock'| translate}}</h1>
+<div class="dulce12 container" [ngStyle]="!facturas1() ? {'padding-bottom': '1px'} : {'padding-bottom': '0px'}">
+    <div *ngIf="!facturas1()" class="void">
+        {{'warning.stock'| translate}}
+    </div>
+    <table class="table" *ngIf="facturas1()">
+        <thead>
+            <tr>
+                <th class="border-cell dulce">{{'crepas.dulce.decoracion'| translate}}</th>
+                <th class="border-cell dulce">{{'product.id'| translate}}</th>
+                <th class="border-cell dulce">{{'Sucursal.id'| translate}}</th>
+                <th class="border-cell dulce">{{'existencia'| translate}}</th>
+                <th class="border-cell dulce">{{'inventario'| translate}}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let decoracion of decoraciones">
+                <td class="border-cell dulce1">{{ decoracion.decoracion }}</td>
+                <td class="border-cell dulce1">{{ decoracion.product_id }}</td>
+                <td class="border-cell dulce1">{{ decoracion.sucursal_id }}</td>
+                <td class="border-cell dulce1">               
+                    <div style="position: relative;"><p class="parrafo" *ngIf="decoracion.cantidad === 1">{{decoracion.existencia === 0 ? 'false' : 'true'}}</p></div>      
+                    
+                    <select *ngIf="decoracion.cantidad === 0" (change)="actualizarExistencia(decoracion, decoracion.product_id)" [(ngModel)]="decoracion.existencia" class="form-control" name="cantidad">
+                    <option  [value]= "0">
+                        false
+                    </option>
+                    <option  [value]= "1">
+                        true
+                    </option>
+                </select>
+            </td>
+            <td class="border-cell dulce1">
+                <p *ngIf="decoracion.cantidad === 0">{{'warning.stock.false.req'| translate}}</p>
+                    
+                <div *ngIf="decoracion.cantidad === 1" style="display: flex;">
+                    <input style="flex-basis: 90%;" type="number" [(ngModel)]="decoracion.inventario"  (input)="existencia(decoracion)">
+                    <i style="color: black;
+                    background: aqua;
+                    flex-basis: 8%;
+                    padding-top: 4px;" class="fas fa-undo-alt" (click)="actualizaInventario(decoracion, decoracion.product_id)"></i>                    
+                    </div>
+            </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="containerRes" style="background-color: oldlace; padding-bottom: 10px;">
+    <div *ngIf="!facturas1()" class="void">
+        No hay productos para administrar el stock
+    </div>
+    <!-- Tabla de productos de crepa dulce -->
+    <div class="ContRes" style="border: 5px solid;" *ngFor="let decoracion of decoraciones">
+    <div class="dulceRes">
+        <div class="Col">
+                <div class="dulce">{{'crepas.dulce.decoracion'| translate}}</div>
+                <div class="padd">{{ decoracion.decoracion }}</div>
+        </div>
+        <div class="Col">
+            <div class="dulce">{{'product.id'| translate}}</div>
+            <div class="padd">
+                {{decoracion.product_id}}
+            </div>
+    </div>
+    <div class="Col">
+        <div class="dulce">{{'Sucursal.id'| translate}}</div>
+        <div class="padd">{{decoracion.sucursal_id}}</div>    
+</div>
+<div class="Col">
+    <div class="dulce">{{'existencia'| translate}}</div>
+    <div class="padd">
+        <div style="position: relative;"><p class="parrafo" *ngIf="decoracion.cantidad === 1">{{decoracion.existencia === 0 ? 'false' : 'true'}}</p></div>      
+                    
+        <select *ngIf="decoracion.cantidad === 0" (change)="actualizarExistencia(decoracion, decoracion.product_id)" [(ngModel)]="decoracion.existencia" class="form-control" name="cantidad">
+        <option  [value]= "0">
+            false
+        </option>
+        <option  [value]= "1">
+            true
+        </option>
+    </select>
+    </div>    
+</div>
+<div class="Col">
+    <div class="dulce">{{'inventario'| translate}}</div>
+    <div class="padd">
+        <p *ngIf="decoracion.cantidad === 0">{{'warning.stock.false.req'| translate}}</p>
+                    
+        <div *ngIf="decoracion.cantidad === 1" style="display: flex;">
+            <input style="flex-basis: 90%;" type="number" [(ngModel)]="decoracion.inventario"  (input)="existencia(decoracion)">
+            <i style="color: black;
+            background: aqua;
+            flex-basis: 8%;
+            padding-top: 4px;" class="fas fa-undo-alt" (click)="actualizaInventario(decoracion, decoracion.product_id)"></i>                    
+            </div>
+    </div>    
+</div>
+    </div>
+
+</div>
+</div>

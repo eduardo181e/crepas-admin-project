@@ -20,6 +20,9 @@ export class MenuCrepaDulceComponent {
  navigateNieve(){
   this.router.navigate(['/crepaDulceNieve']);
  }
+ navigateDecoracion(){
+  this.router.navigate(['/crepaDulceDecoracion']);
+ }
  navigatePrecio(){
   this.router.navigate(['crepaDulcePrecio']);
  }

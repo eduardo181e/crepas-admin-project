@@ -19,7 +19,7 @@
     </thead>
     <tbody>
         <tr *ngFor="let ingrediente of ingredientes">
-            <td class="border-cell dulce1 r4">{{ ingrediente.ingrediente_com }}</td>
+            <td class="border-cell dulce1 r4">{{ ingrediente.ingrediente_unt }}</td>
             <td class="border-cell dulce1">{{ ingrediente.product_id }}</td>
             <td class="border-cell dulce1">{{ ingrediente.sucursal_id }}</td>
             <td (click)="viewFactura(ingrediente.factura_id)" class="border-cell dulce1">{{ ingrediente.factura_id }}</td>
@@ -42,7 +42,7 @@
     <div class="dulceRes">
         <div class="Col">
                 <div class="dulce">{{'crepas.ingrediente.edit.ingrediente'| translate}}</div>
-                <div class="padd">{{ ingrediente.ingrediente_com }}</div>
+                <div class="padd">{{ ingrediente.ingrediente_unt }}</div>
         </div>
     <div class="Col">
         <div class="dulce">{{'product.id'| translate}}</div>

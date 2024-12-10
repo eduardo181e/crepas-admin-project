@@ -2,12 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { precio } from '../models/precio';
+import { API_BASE_URL } from './environment';
 @Injectable({
   providedIn: 'root'
 })
 export class WaflesService {
-  API_URI = 'https://crepas-admin-project-api.onrender.com/wafle'
-  API_URI2 = 'https://crepas-admin-project-api.onrender.com/waffleCanasta'
+  API_URI = API_BASE_URL+'/wafle'
+  API_URI2 = API_BASE_URL+'/waffleCanasta'
   constructor(private http: HttpClient) { }
     // Ingrediente Untable
     getIngredientesU(){
@@ -49,6 +50,20 @@ export class WaflesService {
     updateIngredienteC(id: string|number|any, ingrediente: any): Observable<any>{
       return this.http.put((this.API_URI)+'/IC' + '/' + id, ingrediente );
     }
+    // Decoracion
+    getDecoraciones(){
+      return this.http.get((this.API_URI)+'/D/');
+    }
+  
+    getDecoracion(id: any){
+      return this.http.get((this.API_URI)+'/D'+ '/'+ id);
+    }
+  
+  
+    updateDecoracion(id: string|number|any, nieve: any): Observable<any>{
+      return this.http.put((this.API_URI)+'/D' + '/' + id, nieve );
+    }
+
     // Nieve
     getNieves(){
       return this.http.get((this.API_URI)+'/N/');

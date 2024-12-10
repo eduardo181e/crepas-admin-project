@@ -17,4 +17,7 @@ export class MenuWaffleRegularSalesGlobalComponent {
   navigateNieves(){
     this.router.navigate(['wafflesNieveSalesGlobal']);
   }
+  navigateDecoracion(){
+    this.router.navigate(['wafflesDecoracionSalesGlobal']);
+  }
 }

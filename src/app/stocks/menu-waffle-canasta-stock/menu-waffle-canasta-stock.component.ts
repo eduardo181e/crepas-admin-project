@@ -17,4 +17,7 @@ export class MenuWaffleCanastaStockComponent {
   navigateNieves(){
     this.router.navigate(['wafflesCanastaNieveStock']);
   }
+  navigateDecoracion(){
+    this.router.navigate(['wafflesCanastaDecoracionStock']);
+  }
 }

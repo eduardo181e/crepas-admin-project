@@ -71,12 +71,14 @@
     "crepas.dulces.ingredientes.unt": "Ingredientes Untables",
     "crepas.dulces.ingredientes.com": "Ingredientes Complemetarios",
     "crepas.dulces.nieves": "Nieves",
+    "crepas.dulces.decoracion": "Decoraciones",
     "crepas.dulces.precios": "Precios",
 
     "crepas.dulce.harinas": "Harina",
     "crepas.dulce.ingredientes.unt": "Ingrediente Untable",
     "crepas.dulce.ingredientes.com": "Ingrediente Complemetario",
     "crepas.dulce.nieves": "Nieve",
+    "crepas.dulce.decoraciones": "Decoracion",
     "crepas.dulce.precios": "Precio",
     "crepas.salada.ingrediente.principales": "Ingredientes Principales",
     "crepas.salada.ingrediente.bases": "Ingredientes Base",
@@ -130,7 +132,9 @@
 
     "crepas.dulces.nieve.create": "Nueva Nieve",
     "crepas.dulces.nieve.edit": "Editar Nieve",
+    "crepas.dulces.decoracion.edit": "Editar Decoracion",
     "crepas.dulces.nieve.edit.harina": "Nieve",
+    "crepas.dulces.decoracion.edit.decoracion": "Decoracion",
     
     "precio": "Precio",
     "precio.descripcion": "Descripcion",
@@ -159,6 +163,7 @@
     "menu.crepas.ingredientes.com.dulce.stock": "Ingredientes Complemetarios Inventario",
     "menu.crepas.ingredientes.unt.dulce.stock": "Ingredientes Untables Inventario",
     "menu.crepas.nieve.dulce.stock": "Nieves Inventario",
+    "menu.crepas.decoracion.dulce.stock": "Decoraciones Inventario",
 
 
 
@@ -183,6 +188,7 @@
     "menu.crepas.ingredientes.com.dulce.ventas": "Ingredientes Complemetarios Ventas",
     "menu.crepas.ingredientes.unt.dulce.ventas": "Ingredientes Untables Ventas",
     "menu.crepas.nieve.dulce.ventas": "Nieves Ventas",
+    "menu.crepas.decoracion.dulce.ventas": "Decoraciones Ventas",
 
 
     "menu.crepas.salada.ventas": "Crepa Salada Ventas",
@@ -203,6 +209,7 @@
     "menu.crepas.ingredientes.com.dulce.ventas.global": "Ingredientes Complemetarios Ventas Globales",
     "menu.crepas.ingredientes.unt.dulce.ventas.global": "Ingredientes Untables Ventas Globales",
     "menu.crepas.nieve.dulce.ventas.global": "Nieves Ventas Globales",
+    "menu.crepas.decoracion.dulce.ventas.global": "Decoraciones Ventas Globales",
 
 
     "menu.crepas.salada.ventas.global": "Crepa Salada Ventas Globales",

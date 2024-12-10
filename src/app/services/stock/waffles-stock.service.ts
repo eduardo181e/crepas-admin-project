@@ -1,11 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { API_BASE_URL } from '../environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class WafflesStockService {
-  API_URI = 'https://crepas-admin-project-api.onrender.com/stock/waffles'
+  API_URI = API_BASE_URL+'/stock/waffles'
   constructor(private http: HttpClient) { }
     // Ingrediente Untable
     getIngredientesUntables(sucursal_id: any){
@@ -45,5 +46,17 @@ export class WafflesStockService {
   
     updateStockNieve(id: any, updatedNieve: any){
       return this.http.put((this.API_URI) + '/N/' + id, updatedNieve);
+    }
+    // Decoraciones
+    getDecoraciones(sucursal_id: any){
+      return this.http.post((this.API_URI)+ '/D', sucursal_id);
+    }
+  
+    getDecoracion(id: any, sucursal_id: any){
+      return this.http.post((this.API_URI)+ '/D/'+ id, sucursal_id);
+    }
+  
+    updateStockDecoracion(id: any, updatedNieve: any){
+      return this.http.put((this.API_URI) + '/D/' + id, updatedNieve);
     }
 }

@@ -2,11 +2,12 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { usuarioE } from '../models/usuarioEcommer';
+import { API_BASE_URL } from './environment';
 @Injectable({
   providedIn: 'root'
 })
 export class UsuariosEccomerService {
-  API_URI = 'https://crepas-admin-project-api.onrender.com/eccomer'
+  API_URI = API_BASE_URL+'/eccomer'
   constructor(private http: HttpClient) { }
     // Ingrediente Untable
     getUsuarios(){

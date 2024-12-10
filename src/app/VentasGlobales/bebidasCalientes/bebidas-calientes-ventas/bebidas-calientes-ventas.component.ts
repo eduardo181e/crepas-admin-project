@@ -52,6 +52,7 @@ res[index].created_at = fechaFormateada;
         this.bebidas = res
       console.log(this.sucursal_id)},
       err => {
+        console.log(err)
         if(this.authService.lang() === 'es'){
           this.alertService.mostrarAlerta('Tu sesión ha expirado, inicia sesión nuevamente');
           }else if(this.authService.lang() === 'en'){
@@ -100,6 +101,7 @@ res[index].created_at = fechaFormateada;
         this.bebidas = res
       },
       err => {
+        console.log(err);
         if(this.authService.lang() === 'es'){
           this.alertService.mostrarAlerta('Tu sesión ha expirado, inicia sesión nuevamente');
           }else if(this.authService.lang() === 'en'){

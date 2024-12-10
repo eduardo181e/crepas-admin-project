@@ -2,12 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { precio } from '../models/precio';
+import { API_BASE_URL } from './environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CrepaDulceService {
-  API_URI = 'https://crepas-admin-project-api.onrender.com/crepaDulce'
+  API_URI = API_BASE_URL+'/crepaDulce'
   constructor(private http: HttpClient) { }
   // Harinas
   getHarinas(){
@@ -91,6 +92,20 @@ export class CrepaDulceService {
 
   updateNieve(id: string|number|any, nieve: any): Observable<any>{
     return this.http.put((this.API_URI)+'/N' + '/' + id, nieve );
+  }
+
+  // Decoracion
+  getDecoraciones(){
+    return this.http.get((this.API_URI)+'/D/');
+  }
+
+  getDecoracion(id: any){
+    return this.http.get((this.API_URI)+'/D'+ '/'+ id);
+  }
+
+
+  updateDecoracion(id: string|number|any, nieve: any): Observable<any>{
+    return this.http.put((this.API_URI)+'/D' + '/' + id, nieve );
   }
     // Precios
   getPrecios(){

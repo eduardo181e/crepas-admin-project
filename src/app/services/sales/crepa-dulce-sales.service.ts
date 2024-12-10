@@ -1,11 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { API_BASE_URL } from '../environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CrepaDulceSalesService {
-  API_URI = 'https://crepas-admin-project-api.onrender.com/sales/crepaDulce'
+  API_URI = API_BASE_URL+'/sales/crepaDulce'
   constructor(private http: HttpClient) { }
 
   // Harinas
@@ -58,6 +59,18 @@ export class CrepaDulceSalesService {
 
   lapsSalesNieves(sucursal_id: any){
     return this.http.post((this.API_URI)+'/N/laps', sucursal_id);
+  }
+  // Decoraciones
+  getDecoraciones(sucursal_id: any){
+    return this.http.post((this.API_URI)+'/D/', sucursal_id);
+  }
+
+  getDecoracion(id: any){
+    return this.http.get((this.API_URI)+ '/D/'+ id);
+  }
+
+  lapsSalesDecoraciones(sucursal_id: any){
+    return this.http.post((this.API_URI)+'/D/laps', sucursal_id);
   }
 
 }

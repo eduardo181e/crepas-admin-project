@@ -3,6 +3,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { catchError } from 'rxjs/operators';
+import { API_BASE_URL } from './environment';
 
 interface LoginResponse {
   token: string;
@@ -16,7 +17,7 @@ interface ErrorResponse {
   providedIn: 'root'
 })
 export class SigninAdminService {
-  API_URI = 'https://crepas-admin-project-api.onrender.com/authentication'
+  API_URI = API_BASE_URL+'/authentication'
   constructor(private http: HttpClient) { }
 
   login(username: string, password: string): Observable<any> {

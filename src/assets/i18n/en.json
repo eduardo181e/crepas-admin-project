@@ -199,6 +199,7 @@
     "menu.crepas.ingredientes.com.dulce.ventas.global": "Complementary Ingredients Global Sales",
     "menu.crepas.ingredientes.unt.dulce.ventas.global": "Spreadable Ingredients Global Sales",
     "menu.crepas.nieve.dulce.ventas.global": "Snow Global Sales",
+    "menu.crepas.decoracion.dulce.ventas.global": "Decorations Global Sales",
 
     "menu.crepas.salada.ventas.global": "Salted Crepe Global Sales",
     "menu.crepas.salada.adereso.ventas.global": "Dressing Global Sales",
@@ -273,7 +274,13 @@
 
     "create.user": "New User",
     "edit.user": "Edit User",
-    "generate": "Generate"
+    "generate": "Generate",
+    "crepas.dulces.decoracion": "Decorations",
+    "crepas.dulce.decoraciones": "Decoration",
+    "crepas.dulces.decoracion.edit": "Edit Decoration",
+    "crepas.dulces.decoracion.edit.decoracion": "Decoration",
+    "menu.crepas.decoracion.dulce.stock": "Decorations Inventory",
+    "menu.crepas.decoracion.dulce.ventas": "Sales Decorations"
 
 
 
