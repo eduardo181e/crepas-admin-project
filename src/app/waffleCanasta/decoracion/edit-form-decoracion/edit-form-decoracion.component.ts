@@ -75,7 +75,7 @@ export class EditFormDecoracionWaffleCanastaComponent {
           }else if(this.authService.lang() === 'en'){
             this.alertService.mostrarAlerta('decoracion updated correctly');
           }
-        this.router.navigate(['/wafflesdecoracion']);
+        this.router.navigate(['/wafflesCanastaDecoracion']);
       },
       err => {
               if(err.error.message === 'Token expired'){

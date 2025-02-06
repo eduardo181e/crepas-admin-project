@@ -31,7 +31,7 @@
             <td class="border-cell dulce1">
             <div style="position: relative; display: flex;">
                 <a (click)="viewFactura(factura.id)" class="edit">
-                    Ver factura
+                    {{'factura.ver' | translate}}
                 </a>
             </div>
             </td>
@@ -92,7 +92,7 @@
     </div>
     <div class="accions">
     <div class="editRes" style="overflow: hidden;" (click)="viewFactura(factura.id)">
-        Ver factura
+        {{'factura.ver' | translate}}
     </div>
     </div>
 </div>

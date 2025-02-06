@@ -46,7 +46,10 @@ errorMessage: string = '';
       this.signinAdminService.signUp(this.username, this.password, this.fullname, this.lang).pipe(
         catchError(error => {
           // Maneja el error aquí
-          this.alertService.mostrarAlerta( error);
+          if(error.error.message === '404'){
+              
+            this.alertService.mostrarAlerta( 'The user already exists');
+            }
           return throwError(error); // Lanza el error nuevamente
         })
       ).subscribe(
@@ -93,7 +96,10 @@ errorMessage: string = '';
     this.signinAdminService.signUp(this.username, this.password, this.fullname, this.lang).pipe(
       catchError(error => {
         // Maneja el error aquí
-        this.alertService.mostrarAlerta( error);
+        if(error.error.message === '404'){
+              
+          this.alertService.mostrarAlerta( 'El usuario ya existe');
+          }
         return throwError(error); // Lanza el error nuevamente
       })
     ).subscribe(

@@ -70,6 +70,12 @@ errorMessage: string = '';
               this.changeLanguage(userData.lang)
               // Redirige a la ruta deseada con los datos del usuario
               this.router.navigate(['principal'])
+              const language = userData.lang;
+              if(language === 'es'){
+                this.alertService.mostrarAlerta('Bienvenido ' + userData.fullname)
+                }else{
+                  this.alertService.mostrarAlerta('Welcome ' + userData.fullname)
+                }
             }
           }
         );
@@ -127,6 +133,11 @@ errorMessage: string = '';
               this.changeLanguage(userData.lang)
               // Redirige a la ruta deseada con los datos del usuario
               this.router.navigate(['principal'])
+              if(language === 'es'){
+              this.alertService.mostrarAlerta('Bienvenido ' + userData.fullname)
+              }else{
+                this.alertService.mostrarAlerta('Welcome ' + userData.fullname)
+              }
             }
           }
         );
@@ -174,6 +185,11 @@ errorMessage: string = '';
               this.changeLanguage(userData.lang)
               // Redirige a la ruta deseada con los datos del usuario
               this.router.navigate(['principal'])
+              if(language === 'es'){
+                this.alertService.mostrarAlerta('Bienvenido ' + userData.fullname)
+                }else{
+                  this.alertService.mostrarAlerta('Welcome ' + userData.fullname)
+                }
             }
           }
         );

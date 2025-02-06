@@ -20,7 +20,7 @@
   border-radius: 5px;
 }
 
-input{
+input, textarea{
   width: 92%;
   margin-bottom: 20px;
   height: 35px;

@@ -829,7 +829,7 @@ div1.innerHTML += info;
       </thead>
       <tbody>
         <tr>
-          <td class="border-cell1 dulce1">${objeto.nombre}</td>
+          <td class="border-cell1 dulce1">Sweet Crepes</td>
           <td class="border-cell1 dulce1">${objeto.cantidad}</td>
           <td class="border-cell1 dulce1">${objeto.precio}</td>
           <td class="border-cell1 dulce1">
@@ -866,7 +866,7 @@ div1.innerHTML += info;
   <div class="dulceRes1">
       <div class="Col1">
               <div class="dulce12">Name</div>
-              <div class="padd1">${objeto.nombre}</div>
+              <div class="padd1">Sweet Crepes</div>
       </div>
       <div class="Col1">
           <div class="dulce12">Amount</div>
@@ -945,7 +945,7 @@ div1.innerHTML += info;
       </thead>
       <tbody>
         <tr>
-          <td class="border-cell1 dulce1">${objeto.nombre}</td>
+          <td class="border-cell1 dulce1">Salty Crepes</td>
           <td class="border-cell1 dulce1">${objeto.cantidad}</td>
           <td class="border-cell1 dulce1">${objeto.precio}</td>
           <td class="border-cell1 dulce1">
@@ -980,7 +980,7 @@ div1.innerHTML += info;
   <div class="dulceRes1">
       <div class="Col1">
               <div class="dulce12">Name</div>
-              <div class="padd1">${objeto.nombre}</div>
+              <div class="padd1">Salty Crepes</div>
       </div>
       <div class="Col1">
           <div class="dulce12">Amount</div>
@@ -1162,7 +1162,7 @@ div1.innerHTML += info;
       </thead>
       <tbody>
         <tr>
-          <td class="border-cell1 dulce1">${objeto.nombre}</td>
+          <td class="border-cell1 dulce1">Waffles Basket</td>
           <td class="border-cell1 dulce1">${objeto.cantidad}</td>
           <td class="border-cell1 dulce1">${objeto.precio}</td>
           <td class="border-cell1 dulce1">
@@ -1198,7 +1198,7 @@ div1.innerHTML += info;
     <div class="dulceRes1">
         <div class="Col1">
                 <div class="dulce12">Name</div>
-                <div class="padd1">${objeto.nombre}</div>
+                <div class="padd1">Waffles Basket</div>
         </div>
         <div class="Col1">
             <div class="dulce12">Amount</div>
@@ -1268,7 +1268,7 @@ div1.innerHTML += info;
   </thead>
   <tbody>
   <tr>
-    <td class="border-cell1 dulce1">${objeto.nombre}</td>
+    <td class="border-cell1 dulce1">Hot Drinks</td>
     <td class="border-cell1 dulce1">${objeto.cantidad}</td>
     <td class="border-cell1 dulce1">${objeto.precio}</td>
     <td class="border-cell1 dulce1">
@@ -1289,7 +1289,7 @@ div1.innerHTML += info;
   <div class="botanasRes1">
       <div class="Col1">
               <div class="dulce12">Name</div>
-              <div class="padd1">${objeto.nombre}</div>
+              <div class="padd1">Hot Drinks</div>
       </div>
       <div class="Col1">
           <div class="dulce12">Amount</div>
@@ -1328,7 +1328,7 @@ div1.innerHTML += info;
   </thead>
   <tbody>
   <tr>
-    <td class="border-cell1 dulce1">${objeto.nombre}</td>
+    <td class="border-cell1 dulce1">Cold Drinks</td>
     <td class="border-cell1 dulce1">${objeto.cantidad}</td>
     <td class="border-cell1 dulce1">${objeto.precio}</td>
     <td class="border-cell1 dulce1">
@@ -1349,7 +1349,7 @@ div1.innerHTML += info;
   <div class="botanasRes1">
       <div class="Col1">
               <div class="dulce12">Name</div>
-              <div class="padd1">${objeto.nombre}</div>
+              <div class="padd1">Cold Drinks</div>
       </div>
       <div class="Col1">
           <div class="dulce12">Amount</div>
@@ -1388,7 +1388,7 @@ div1.innerHTML += info;
   </thead>
   <tbody>
   <tr>
-    <td class="border-cell1 dulce1">${objeto.nombre}</td>
+    <td class="border-cell1 dulce1">Snack</td>
     <td class="border-cell1 dulce1">${objeto.cantidad}</td>
     <td class="border-cell1 dulce1">${objeto.precio}</td>
     <td class="border-cell1 dulce1">
@@ -1409,7 +1409,7 @@ div1.innerHTML += info;
   <div class="botanasRes1">
       <div class="Col1">
               <div class="dulce12">Name</div>
-              <div class="padd1">${objeto.nombre}</div>
+              <div class="padd1">Snack</div>
       </div>
       <div class="Col1">
           <div class="dulce12">Amount</div>
@@ -1448,7 +1448,7 @@ div1.innerHTML += info;
   </thead>
   <tbody>
   <tr>
-    <td class="border-cell1 dulce1">${objeto.nombre}</td>
+    <td class="border-cell1 dulce1">Individual Salads</td>
     <td class="border-cell1 dulce1">${objeto.cantidad}</td>
     <td class="border-cell1 dulce1">${objeto.precio}</td>
     <td class="border-cell1 dulce1">
@@ -1469,7 +1469,7 @@ div1.innerHTML += info;
   <div class="botanasRes1">
       <div class="Col1">
               <div class="dulce12">Name</div>
-              <div class="padd1">${objeto.nombre}</div>
+              <div class="padd1">Individual Salads</div>
       </div>
       <div class="Col1">
           <div class="dulce12">Amount</div>
@@ -1527,6 +1527,9 @@ div1.innerHTML += info;
     div.classList.add('tabla-container');
     body.innerHTML = `
 <style>
+body {
+border: none
+}
 .tabla-container {
   padding-bottom: 40px;
   }
@@ -1579,15 +1582,7 @@ div1.innerHTML += info;
   }
 
 </style>`;
-const año = this.invoice[0].fecha_hora.substr(0, 4);
-const mes = this.invoice[0].fecha_hora.substr(5, 2);
-const dia = this.invoice[0].fecha_hora.substr(8, 2);
-const hora = this.invoice[0].fecha_hora.substr(11, 2);
-const minuto = this.invoice[0].fecha_hora.substr(14, 2);
-const segundo = this.invoice[0].fecha_hora.substr(17, 2);
 
-// Construye la fecha legible
-this.invoice[0].fecha_hora =`${dia}/${mes}/${año} a las ${hora}:${minuto}:${segundo}`;
 const token:any = localStorage.getItem('token');
 const tokenData = token.split('.')[1]; // Obtén la parte de los datos del token
 const decodedTokenData = JSON.parse(atob(tokenData)); // Decodifica y parsea los datos
@@ -1972,25 +1967,178 @@ if(language === 'es'){
         switch (objeto.nombre) {
   
           case crepasDulce:
-        tabla = `
-    <div class='tabla-container'>
-    <table style="width: 902px;">
-      <thead>
-        <tr>
+        case crepasDulce:
+              tabla = `
+          <div class='tabla-container'>
+          <table style="width: 902px;">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Amount</th>
+                <th>Price</th>
+                <th>Complements</th>
+                <th>Spreads</th>
+                <th>Flour</th>
+                <th>Snow</th>
+                <th>Decor</th>
+                <th>Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Sweet Crepes</td>
+                <td>${objeto.cantidad}</td>
+                <td>${objeto.precio}</td>
+                <td>
+                  <ul class="ingredient-list">
+                    ${objeto.orden.ingredientes_com.map((ing: any) => `<li>${ing.nombre}</li>`).join('')}
+                  </ul>
+                </td>
+                <td>
+                  <ul>
+                    ${objeto.orden.ingredientes_unt.map((ing: any) => `<li>${ing.nombre}</li>`).join('')}
+                  </ul>
+                </td>
+                <td>${objeto.orden.harina.harina}</td>
+                <td>
+                  <ul>
+                    ${objeto.orden.nieve.map((nieve: any) => `<li>${nieve.nombre}</li>`).join('')}
+                  </ul>
+                </td>
+                <td>
+                <ul>
+                ${objeto.orden.decoracion.map((decoracion: any) => `<li>${decoracion.nombre}</li>`).join('')}
+                </ul>
+              </td>
+                <td>${objeto.total}</td>
+              </tr>
+            </tbody>
+          </table>
+          </div>
+          `;
+          
+          div.innerHTML += tabla;
+          break;
+          case crepasSalada:
+          tabla = `
+          <div  class='tabla-container'>
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Amount</th>
+                <th>Price</th>
+                <th>Base Ingredients</th>
+                <th>Base Dressings</th>
+                <th>Ingredients</th>
+                <th>Dressings</th>
+                <th>Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Salty Crepes</td>
+                <td>${objeto.cantidad}</td>
+                <td>${objeto.precio}</td>
+                <td>
+                  <ul class="ingredient-list">
+                    ${objeto.orden.ingredientes_base.map((ing: any) => `<li>${ing.ingrediente_base}</li>`).join('')}
+                  </ul>
+                </td>
+                <td>
+                  <ul>
+                    ${objeto.orden.adereso_base.map((ing: any) => `<li>${ing.adereso_base}</li>`).join('')}
+                  </ul>
+                </td>
+                <td>
+                <ul class="ingredient-list">
+                  ${objeto.orden.ingredientes.map((ing: any) => `<li>${ing.nombre}</li>`).join('')}
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  ${objeto.orden.aderesos.map((ing: any) => `<li>${ing.nombre}</li>`).join('')}
+                </ul>
+              </td>
+                <td>${objeto.total}</td>
+              </tr>
+            </tbody>
+          </table>
+          </div>
+          `
+          div.innerHTML += tabla;
+          break;
+          
+          case waffles:
+            tabla = `
+          <div class='tabla-container'>
+          <table style="width: 920px;">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Amount</th>
+              <th>Price</th>
+              <th>Complements</th>
+              <th>Spreads</th>
+              <th>Snow</th>
+              <th>Decor</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Waffles</td>
+              <td>${objeto.cantidad}</td>
+              <td>${objeto.precio}</td>
+              <td>
+                <ul class="ingredient-list">
+                  ${objeto.orden.ingredientes_com.map((ing: any) => `<li>${ing.nombre}</li>`).join('')}
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  ${objeto.orden.ingredientes_unt.map((ing: any) => `<li>${ing.nombre}</li>`).join('')}
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  ${objeto.orden.nieve.map((nieve: any) => `<li>${nieve.nombre}</li>`).join('')}
+                </ul>
+              </td>
+              <td>
+              <ul>
+              ${objeto.orden.decoracion.map((decoracion: any) => `<li>${decoracion.nombre}</li>`).join('')}
+              </ul>
+            </td>
+              <td>${objeto.total}</td>
+            </tr>
+          </tbody>
+          </table>
+          </div>
+          `;
+          
+          div.innerHTML += tabla;
+          break;
+          
+          case waffleCanasta:
+          tabla = `
+          <div class='tabla-container'>
+          <table style="width: 923px;">
+          <thead>
+          <tr>
           <th>Name</th>
           <th>Amount</th>
           <th>Price</th>
           <th>Complements</th>
           <th>Spreads</th>
-          <th>Flour</th>
           <th>Snow</th>
           <th>Decor</th>
           <th>Total</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>${objeto.nombre}</td>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+          <td>Waffles Basket</td>
           <td>${objeto.cantidad}</td>
           <td>${objeto.precio}</td>
           <td>
@@ -2003,7 +2151,6 @@ if(language === 'es'){
               ${objeto.orden.ingredientes_unt.map((ing: any) => `<li>${ing.nombre}</li>`).join('')}
             </ul>
           </td>
-          <td>${objeto.orden.harina.harina}</td>
           <td>
             <ul>
               ${objeto.orden.nieve.map((nieve: any) => `<li>${nieve.nombre}</li>`).join('')}
@@ -2013,298 +2160,147 @@ if(language === 'es'){
           <ul>
           ${objeto.orden.decoracion.map((decoracion: any) => `<li>${decoracion.nombre}</li>`).join('')}
           </ul>
-        </td>
+          </td>
           <td>${objeto.total}</td>
-        </tr>
-      </tbody>
-    </table>
-    </div>
-  `;
-  
-  div.innerHTML += tabla;
-  break;
-  case crepasSalada:
-    tabla = `
-    <div  class='tabla-container'>
-    <table>
-      <thead>
-        <tr>
+          </tr>
+          </tbody>
+          </table>
+          </div>
+          `;
+          
+          div.innerHTML += tabla;
+          break;
+          
+          case bebidasCalientes:
+          tabla = `
+          <div class='tabla-container'>
+          <table style="width: 1005px;">
+          <thead>
+          <tr>
           <th>Name</th>
           <th>Amount</th>
           <th>Price</th>
-          <th>Base Ingredients</th>
-          <th>Base Dressings</th>
-          <th>Ingredients</th>
-          <th>Dressings</th>
+          <th>Drink</th>
           <th>Total</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>${objeto.nombre}</td>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+          <td>Hot<br>Drinks</td>
           <td>${objeto.cantidad}</td>
           <td>${objeto.precio}</td>
           <td>
             <ul class="ingredient-list">
-              ${objeto.orden.ingredientes_base.map((ing: any) => `<li>${ing.ingrediente_base}</li>`).join('')}
+              ${objeto.orden.bebida}
             </ul>
           </td>
-          <td>
-            <ul>
-              ${objeto.orden.adereso_base.map((ing: any) => `<li>${ing.adereso_base}</li>`).join('')}
-            </ul>
-          </td>
-          <td>
-          <ul class="ingredient-list">
-            ${objeto.orden.ingredientes.map((ing: any) => `<li>${ing.nombre}</li>`).join('')}
-          </ul>
-        </td>
-        <td>
-          <ul>
-            ${objeto.orden.aderesos.map((ing: any) => `<li>${ing.nombre}</li>`).join('')}
-          </ul>
-        </td>
           <td>${objeto.total}</td>
-        </tr>
-      </tbody>
-    </table>
-    </div>
-    `
-    div.innerHTML += tabla;
-    break;
-  
-    case waffles:
-      tabla = `
-  <div class='tabla-container'>
-  <table style="width: 920px;">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Amount</th>
-        <th>Price</th>
-        <th>Complements</th>
-        <th>Spreads</th>
-        <th>Snow</th>
-        <th>Decor</th>
-        <th>Total</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>${objeto.nombre}</td>
-        <td>${objeto.cantidad}</td>
-        <td>${objeto.precio}</td>
-        <td>
-          <ul class="ingredient-list">
-            ${objeto.orden.ingredientes_com.map((ing: any) => `<li>${ing.nombre}</li>`).join('')}
-          </ul>
-        </td>
-        <td>
-          <ul>
-            ${objeto.orden.ingredientes_unt.map((ing: any) => `<li>${ing.nombre}</li>`).join('')}
-          </ul>
-        </td>
-        <td>
-          <ul>
-            ${objeto.orden.nieve.map((nieve: any) => `<li>${nieve.nombre}</li>`).join('')}
-          </ul>
-        </td>
-        <td>
-        <ul>
-        ${objeto.orden.decoracion.map((decoracion: any) => `<li>${decoracion.nombre}</li>`).join('')}
-        </ul>
-      </td>
-        <td>${objeto.total}</td>
-      </tr>
-    </tbody>
-  </table>
-  </div>
-  `;
-  
-  div.innerHTML += tabla;
-  break;
-  
-  case waffleCanasta:
-  tabla = `
-  <div class='tabla-container'>
-  <table style="width: 923px;">
-  <thead>
-  <tr>
-    <th>Name</th>
-    <th>Amount</th>
-    <th>Price</th>
-    <th>Complements</th>
-    <th>Spreads</th>
-    <th>Snow</th>
-    <th>Decor</th>
-    <th>Total</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr>
-    <td>${objeto.nombre}</td>
-    <td>${objeto.cantidad}</td>
-    <td>${objeto.precio}</td>
-    <td>
-      <ul class="ingredient-list">
-        ${objeto.orden.ingredientes_com.map((ing: any) => `<li>${ing.nombre}</li>`).join('')}
-      </ul>
-    </td>
-    <td>
-      <ul>
-        ${objeto.orden.ingredientes_unt.map((ing: any) => `<li>${ing.nombre}</li>`).join('')}
-      </ul>
-    </td>
-    <td>
-      <ul>
-        ${objeto.orden.nieve.map((nieve: any) => `<li>${nieve.nombre}</li>`).join('')}
-      </ul>
-    </td>
-    <td>
-    <ul>
-    ${objeto.orden.decoracion.map((decoracion: any) => `<li>${decoracion.nombre}</li>`).join('')}
-    </ul>
-  </td>
-    <td>${objeto.total}</td>
-  </tr>
-  </tbody>
-  </table>
-  </div>
-  `;
-  
-  div.innerHTML += tabla;
-  break;
-  
-  case bebidasCalientes:
-  tabla = `
-  <div class='tabla-container'>
-  <table style="width: 1005px;">
-  <thead>
-  <tr>
-    <th>Name</th>
-    <th>Amount</th>
-    <th>Price</th>
-    <th>Drink</th>
-    <th>Total</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr>
-    <td>${objeto.nombre}</td>
-    <td>${objeto.cantidad}</td>
-    <td>${objeto.precio}</td>
-    <td>
-      <ul class="ingredient-list">
-        ${objeto.orden.bebida}
-      </ul>
-    </td>
-    <td>${objeto.total}</td>
-  </tr>
-  </tbody>
-  </table>
-  </div>
-  `;
-  
-  div.innerHTML += tabla;
-  break;
-  
-  case bebidasFrias:
-  tabla = `
-  <div class='tabla-container'>
-  <table style="width: 1005px;">
-  <thead>
-  <tr>
-    <th>Name</th>
-    <th>Amount</th>
-    <th>Price</th>
-    <th>Drink</th>
-    <th>Total</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr>
-    <td>${objeto.nombre}</td>
-    <td>${objeto.cantidad}</td>
-    <td>${objeto.precio}</td>
-    <td>
-      <ul class="ingredient-list">
-        ${objeto.orden.bebida}
-      </ul>
-    </td>
-    <td>${objeto.total}</td>
-  </tr>
-  </tbody>
-  </table>
-  </div>
-  `;
-  
-  div.innerHTML += tabla;
-  break;
-  
-  case botanas:
-  tabla = `
-  <div class='tabla-container'>
-  <table style="width: 1005px;">
-  <thead>
-  <tr>
-    <th>Name</th>
-    <th>Amount</th>
-    <th>Price</th>
-    <th>Snack</th>
-    <th>Total</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr>
-    <td>${objeto.nombre}</td>
-    <td>${objeto.cantidad}</td>
-    <td>${objeto.precio}</td>
-    <td>
-      <ul class="ingredient-list">
-        ${objeto.orden.botana}
-      </ul>
-    </td>
-    <td>${objeto.total}</td>
-  </tr>
-  </tbody>
-  </table>
-  </div>
-  `;
-  
-  div.innerHTML += tabla;
-  break;
-  
-  case ensaladas:
-  tabla = `
-  <div class='tabla-container'>
-  <table style="width: 1000px;">
-  <thead>
-  <tr>
-    <th>Name</th>
-    <th>Amount</th>
-    <th>Price</th>
-    <th>Salad</th>
-    <th>Total</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr>
-    <td>${objeto.nombre}</td>
-    <td>${objeto.cantidad}</td>
-    <td>${objeto.precio}</td>
-    <td>
-      <ul class="ingredient-list">
-        ${objeto.orden.ensalada}
-      </ul>
-    </td>
-    <td>${objeto.total}</td>
-  </tr>
-  </tbody>
-  </table>
-  </div>
-  `;
-  
-  div.innerHTML += tabla;
+          </tr>
+          </tbody>
+          </table>
+          </div>
+          `;
+          
+          div.innerHTML += tabla;
+          break;
+          
+          case bebidasFrias:
+          tabla = `
+          <div class='tabla-container'>
+          <table style="width: 1005px;">
+          <thead>
+          <tr>
+          <th>Name</th>
+          <th>Amount</th>
+          <th>Price</th>
+          <th>Drink</th>
+          <th>Total</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+          <td>Cold<br>Drinks</td>
+          <td>${objeto.cantidad}</td>
+          <td>${objeto.precio}</td>
+          <td>
+            <ul class="ingredient-list">
+              ${objeto.orden.bebida}
+            </ul>
+          </td>
+          <td>${objeto.total}</td>
+          </tr>
+          </tbody>
+          </table>
+          </div>
+          `;
+          
+          div.innerHTML += tabla;
+          break;
+          
+          case botanas:
+          tabla = `
+          <div class='tabla-container'>
+          <table style="width: 1005px;">
+          <thead>
+          <tr>
+          <th>Name</th>
+          <th>Amount</th>
+          <th>Price</th>
+          <th>Snack</th>
+          <th>Total</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+          <td>Snack</td>
+          <td>${objeto.cantidad}</td>
+          <td>${objeto.precio}</td>
+          <td>
+            <ul class="ingredient-list">
+              ${objeto.orden.botana}
+            </ul>
+          </td>
+          <td>${objeto.total}</td>
+          </tr>
+          </tbody>
+          </table>
+          </div>
+          `;
+          
+          div.innerHTML += tabla;
+          break;
+          
+          case ensaladas:
+          tabla = `
+          <div class='tabla-container'>
+          <table style="width: 1000px;">
+          <thead>
+          <tr>
+          <th>Name</th>
+          <th>Amount</th>
+          <th>Price</th>
+          <th>Salad</th>
+          <th>Total</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+          <td>Individual Salads</td>
+          <td>${objeto.cantidad}</td>
+          <td>${objeto.precio}</td>
+          <td>
+            <ul class="ingredient-list">
+              ${objeto.orden.ensalada}
+            </ul>
+          </td>
+          <td>${objeto.total}</td>
+          </tr>
+          </tbody>
+          </table>
+          </div>
+          `;
+          
+          div.innerHTML += tabla;
   break;
         }
       });

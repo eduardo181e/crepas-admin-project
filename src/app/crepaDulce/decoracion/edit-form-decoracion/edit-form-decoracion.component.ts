@@ -74,7 +74,7 @@ export class EditFormDecoracionCrepaDulceComponent {
           }else if(this.authService.lang() === 'en'){
             this.alertService.mostrarAlerta('decoracion updated correctly');
           }
-        this.router.navigate(['/wafflesdecoracion']);
+        this.router.navigate(['/crepaDulceDecoracion']);
       },
       err => {
               if(err.error.message === 'Token expired'){

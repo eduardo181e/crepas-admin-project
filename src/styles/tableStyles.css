@@ -128,21 +128,7 @@ h1{
     border-radius: 10px; /* Cambia este valor para ajustar el redondeo */
   }
 
-.r1{
-    border-radius: 10px 0px 0px 0px;
-}
 
-.r2{
-    border-radius: 0px 10px 0px 0px;
-}
-
-.r3{
-    border-radius: 0px 0px 10px 0px;
-}
-
-.r4{
-    border-radius: 0px 0px 0px 10px;
-}
 
 .waffle{
     background: beige;

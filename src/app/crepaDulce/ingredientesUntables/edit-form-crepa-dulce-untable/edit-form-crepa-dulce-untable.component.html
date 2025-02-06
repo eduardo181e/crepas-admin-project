@@ -4,7 +4,7 @@
         <form>
             <h2>{{'crepas.ingrediente.edit.ingrediente'| translate}}</h2>
             <div class="form-group">
-                <input type="text" name="ingrediente_com" placeholder="ingrediente" [(ngModel)]="ingrediente.ingrediente_com" class="form-control" autofocus>
+                <input type="text" name="ingrediente_unt" placeholder="ingrediente" [(ngModel)]="ingrediente.ingrediente_unt" class="form-control" autofocus>
             </div>             
             <h2>{{'inventario'| translate}}</h2>
             <div class="form-group">           
@@ -25,7 +25,7 @@
     
     
         <div class="container">
-            <h3>{{ingrediente.ingrediente_unt == '' ? ('crepas.dulces.ingredientes.com'| translate) : ingrediente.ingrediente_unt}}</h3>
+            <h3>{{ingrediente.ingrediente_unt == '' ? ('crepas.dulces.ingredientes.unt'| translate) : ingrediente.ingrediente_unt}}</h3>
             <p>
                 {{ingrediente.inventario === '1' ? ('inventario.true'| translate) : ('inventario.false'| translate)}}
               </p>
