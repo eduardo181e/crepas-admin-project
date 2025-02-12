@@ -26,6 +26,7 @@ export class ViewFacturaComponent {
       res => {
         console.log(res);
         this.invoice = res;
+        this.invoice[0].orden = JSON.parse(this.invoice[0].orden)
         this.viewOrden();
       },
       err => {

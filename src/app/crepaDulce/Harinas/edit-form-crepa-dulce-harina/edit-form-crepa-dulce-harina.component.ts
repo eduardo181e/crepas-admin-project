@@ -31,11 +31,14 @@ export class EditFormCrepaDulceHarinaComponent {
     if(id){
       this.service.getHarina(id)
       .subscribe(
-        res => {
+        (res:any) => {
+          
+          res[0].inventario = res[0].inventario.toString();
           console.log(res);
           this.harina1 = res;
           console.log(this.harina1[0]);
           this.harina = this.harina1[0];
+          console.log('problem',this.harina)
           this.edit = true;
         },
         err => {
@@ -52,6 +55,7 @@ export class EditFormCrepaDulceHarinaComponent {
     }
   }
   updateHarina(){   
+    console.log('problem',this.harina)
     if(this.harina.harina == '' && this.harina.inventario == ''){
       if(this.authService.lang() === 'es'){
         this.alertService.mostrarAlerta('Por favor ingresa todos los datos');

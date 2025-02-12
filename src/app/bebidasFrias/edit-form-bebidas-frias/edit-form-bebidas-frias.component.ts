@@ -34,7 +34,8 @@ export class EditFormBebidasFriasComponent {
     if(id){
       this.bebidasFriasService.getBebida(id)
       .subscribe(
-        res => {
+        (res:any) => {
+          res[0].inventario = res[0].inventario.toString();
           console.log(res);
           this.bebida1 = res;
           console.log(this.bebida1[0]);

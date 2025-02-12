@@ -27,7 +27,8 @@ export class EditFormDecoracionCrepaDulceComponent {
     if(id){
       this.service.getDecoracion(id)
       .subscribe(
-        res => {
+        (res:any) => {
+          res[0].inventario = res[0].inventario.toString();
           console.log(res);
           this.decoracion1 = res;
           console.log(this.decoracion1[0]);

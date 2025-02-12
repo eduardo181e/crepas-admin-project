@@ -13,7 +13,7 @@ export class AderesoBaseEditFormComponent {
 
   adereso:any = {
     id: 0,
-    adereso: ''
+    adereso_base: ''
   }
 
   edit: boolean = false;
@@ -29,8 +29,8 @@ export class AderesoBaseEditFormComponent {
     if(id){
       this.service.getAderesoB(id)
       .subscribe(
-        res => {
-          console.log(res);
+        (res:any) => {
+          res[0].inventario = res[0].inventario.toString();
           this.adereso1 = res;
           console.log(this.adereso1[0]);
           this.adereso = this.adereso1[0];

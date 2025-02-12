@@ -32,7 +32,8 @@ export class EditFormCrepaSaladaBotanaComponent {
     if(id){
       this.service.getBotana(id)
       .subscribe(
-        res => {
+        (res:any) => {
+          res[0].inventario = res[0].inventario.toString();
           console.log(res);
           this.botana1 = res;
           console.log(this.botana1[0]);

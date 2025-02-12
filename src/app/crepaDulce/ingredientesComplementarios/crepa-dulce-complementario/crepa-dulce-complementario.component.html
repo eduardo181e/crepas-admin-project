@@ -18,7 +18,7 @@
     <tbody>
         <tr *ngFor="let ingrediente of ingredientes">
             <td class="border-cell dulce1">{{ingrediente.ingrediente_com}}</td>
-            <td class="border-cell dulce1">{{ingrediente.tipo}}</td>
+            <td class="border-cell dulce1">{{ ingrediente.tipo === 'Fruta' ? ('crepas.ingrediente.com.edit.frutas'| translate) : ingrediente.tipo === 'Frutos Secos' ? ('crepas.ingrediente.com.edit.frutos.secos'| translate) : ('crepas.ingrediente.com.edit.otros'| translate)   }}</td>
             <td class="border-cell dulce1">{{ingrediente.inventario === 0 ? ('inventario.false'| translate) : ('inventario.true'| translate)}}</td>
             <td class="border-cell dulce1">
             <div style="position: relative; display: flex;">
@@ -50,7 +50,7 @@
         </div>
         <div class="Col">
             <div class="dulce">{{'crepas.ingrediente.com.tipo'| translate}}</div>
-            <div class="padd">{{ ingrediente.tipo }}</div>
+            <div class="padd">{{ ingrediente.tipo === 'Fruta' ? ('crepas.ingrediente.com.edit.frutas'| translate) : ingrediente.tipo === 'Frutos Secos' ? ('crepas.ingrediente.com.edit.frutos.secos'| translate) : ('crepas.ingrediente.com.edit.otros'| translate)   }}</div>
     </div>
         <div class="Col">
             <div class="dulce">{{'inventario'| translate}}</div>

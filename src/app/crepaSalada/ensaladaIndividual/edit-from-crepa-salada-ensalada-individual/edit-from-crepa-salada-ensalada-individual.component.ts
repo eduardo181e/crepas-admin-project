@@ -27,7 +27,8 @@ export class EditFromCrepaSaladaEnsaladaIndividualComponent {
     if(id){
       this.service.getEnsalada(id)
       .subscribe(
-        res => {
+        (res:any) => {
+          res[0].inventario = res[0].inventario.toString();
           console.log(res);
           this.ensalada1 = res;
           console.log(this.ensalada1[0]);

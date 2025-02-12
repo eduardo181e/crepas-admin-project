@@ -25,6 +25,7 @@ export class CrepaDulceIngredientesComplementariosStockComponent {
       this.stock.getIngredientesComplementarios(this.ingrediente1).subscribe(
         res => {console.log(res)
           this.ingredientes = res;
+          console.log('problem',res)
         console.log(this.sucursal_id)},
         err => {
           if(err.error.message === 'Token expired'){

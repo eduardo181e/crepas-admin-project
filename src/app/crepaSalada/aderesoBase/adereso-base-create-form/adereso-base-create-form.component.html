@@ -4,7 +4,7 @@
         <form>
             <h2>{{'crepas.adereso.edit.adereso'| translate}}</h2>
             <div class="form-group">
-                <input type="text" name="adereso" placeholder="adereso" [(ngModel)]="adereso.adereso" class="form-control" autofocus>
+                <input type="text" name="adereso" placeholder="adereso" [(ngModel)]="adereso.adereso_base" class="form-control" autofocus>
             </div>
             <h2>{{'inventario'| translate}}</h2>
             <div class="form-group">           
@@ -25,7 +25,7 @@
     
     
         <div class="container">
-            <h3>{{adereso.adereso == '' ? ('crepas.adereso.edit.adereso'| translate) : adereso.adereso}}</h3>
+            <h3>{{adereso.adereso_base == '' ? ('crepas.adereso.edit.adereso'| translate) : adereso.adereso_base}}</h3>
             <p>
                 {{adereso.inventario === '' ? ('inventario.none'| translate) :
                   adereso.inventario === '0' ? ('inventario.false'| translate) :

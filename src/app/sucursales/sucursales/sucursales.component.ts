@@ -19,9 +19,11 @@ export class SucursalesComponent {
   }
   ngOnInit(){
     this.service.getSucursales().subscribe(
-      res => {
-        console.log(res);
-        this.sucursales = res;
+      (res: any) => {
+        this.sucursales = res.map((obj: any) => ({
+          ...obj,
+          direccion: JSON.parse(obj.direccion) 
+        }));
       },
       err => {
               if(err.error.message === 'Token expired'){
@@ -40,8 +42,12 @@ export class SucursalesComponent {
       res => {
         console.log(res);
         this.service.getSucursales().subscribe(
-          res => {
-            this.sucursales = res;
+          (res: any) => {
+            this.sucursales = res.map((obj: any) => ({
+              ...obj,
+              direccion: JSON.parse(obj.direccion) 
+            }));
+            
           },
           err => {
               if(err.error.message === 'Token expired'){

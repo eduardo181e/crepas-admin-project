@@ -28,8 +28,8 @@ export class EditFormDecoracionWaffleCanastaComponent {
     if(id){
       this.service.getDecoracion(id)
       .subscribe(
-        res => {
-          console.log(res);
+        (res:any) => {
+          res[0].inventario = res[0].inventario.toString();
           this.decoracion1 = res;
           console.log(this.decoracion1[0]);
           this.decoracion = this.decoracion1[0];

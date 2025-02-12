@@ -26,6 +26,11 @@
     
         <div class="container">
             <h3>{{adereso.adereso == '' ? ('crepas.adereso.edit.adereso'| translate) : adereso.adereso}}</h3>
-            <p>{{adereso.inventario == 1 ? 'Este adereso cuenta con inventario' : 'Este adereso no cuenta con inventario'}}</p>
+            <p>
+                {{adereso.inventario === '' ? ('inventario.none'| translate) :
+                  adereso.inventario === '0' ? ('inventario.false'| translate) :
+                  adereso.inventario === '1' ? ('inventario.true'| translate) :
+                  ('inventario.none'| translate)}}
+              </p>
         </div>
 </div>

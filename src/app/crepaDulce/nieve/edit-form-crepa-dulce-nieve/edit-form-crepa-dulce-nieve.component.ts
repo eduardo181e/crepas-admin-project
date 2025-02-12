@@ -29,7 +29,8 @@ export class EditFormCrepaDulceNieveComponent {
     if(id){
       this.service.getNieve(id)
       .subscribe(
-        res => {
+        (res:any) => {
+          res[0].inventario = res[0].inventario.toString();
           console.log(res);
           this.nieve1 = res;
           console.log(this.nieve1[0]);

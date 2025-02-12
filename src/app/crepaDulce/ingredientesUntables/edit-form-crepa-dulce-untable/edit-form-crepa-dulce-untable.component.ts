@@ -30,7 +30,8 @@ export class EditFormCrepaDulceUntableComponent {
     if(id){
       this.service.getIngredienteU(id)
       .subscribe(
-        res => {
+        (res:any) => {
+          res[0].inventario = res[0].inventario.toString();
           console.log(res);
           this.ingrediente1 = res;
           console.log(this.ingrediente1[0]);
